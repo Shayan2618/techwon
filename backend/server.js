@@ -87,9 +87,13 @@ app.use((err, req, res, _next) => {
   res.status(500).json({ success: false, error: 'Internal server error' });
 });
 
-app.listen(PORT, () => {
-  console.log(`\n🚀 TechWon API running on http://localhost:${PORT}`);
-  console.log(`   Frontend served at http://localhost:${PORT}`);
-  console.log(`   API health:   http://localhost:${PORT}/api/health`);
-  console.log(`   Agents:       http://localhost:${PORT}/api/agents\n`);
-});
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`\n🚀 TechWon API running on http://localhost:${PORT}`);
+    console.log(`   Frontend served at http://localhost:${PORT}`);
+    console.log(`   API health:   http://localhost:${PORT}/api/health`);
+    console.log(`   Agents:       http://localhost:${PORT}/api/agents\n`);
+  });
+}
+
+module.exports = app;

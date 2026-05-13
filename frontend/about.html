@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About — TechWon AI Operating Systems</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="mobile.css" />
+<style>
+body { overflow-x: hidden; }
+html { scroll-snap-type: y proximity; scroll-behavior: smooth; }
+.page-wrap { max-width: 1060px; margin: 0 auto; padding: 0 40px; }
+/* ── Darker ambient atmosphere to match home page ── */
+:root { --bg-card: rgba(3, 7, 24, 0.88); }
+main  { position: relative; z-index: 2; }
+section { position: relative; }
+
+/* Hero */
+.ab-hero {
+  padding: 120px 0 60px;
+}
+.ab-hero .eyebrow {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: .22em;
+  text-transform: uppercase; color: var(--blue-2); margin-bottom: 20px;
+}
+.ab-hero h1 {
+  font-family: var(--font-display); font-size: clamp(44px, 6.5vw, 80px);
+  font-weight: 700; line-height: 1.0; letter-spacing: -0.03em; margin-bottom: 28px;
+}
+.ab-hero h1 .grad {
+  background: linear-gradient(135deg, var(--blue-3), var(--blue-2), var(--blue-1));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.ab-hero h1 .stroke {
+  -webkit-text-stroke: 1.5px rgba(79,210,255,0.55);
+  -webkit-text-fill-color: transparent; color: transparent;
+}
+.ab-hero p {
+  font-size: 19px; color: var(--muted); max-width: 620px; line-height: 1.65; margin-bottom: 40px;
+}
+.ab-hero-stats {
+  display: flex; gap: 48px;
+  padding-top: 40px; border-top: 1px solid var(--line);
+}
+.ab-stat .val {
+  font-family: var(--font-display); font-size: 38px; font-weight: 700;
+  color: var(--blue-2); line-height: 1;
+}
+.ab-stat .lbl {
+  font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--muted); margin-top: 4px;
+}
+
+/* Mission */
+.ab-mission {
+  padding: 80px 0;
+  border-top: 1px solid var(--line);
+  display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+}
+.ab-mission-text h2 {
+  font-family: var(--font-display); font-size: clamp(28px, 4vw, 44px);
+  font-weight: 700; line-height: 1.05; margin-bottom: 20px;
+}
+.ab-mission-text p {
+  font-size: 16px; color: var(--muted); line-height: 1.7; margin-bottom: 16px;
+}
+.ab-mission-visual {
+  position: relative;
+}
+.ab-quote-block {
+  background: rgba(2, 4, 16, 0.94); border: 1px solid var(--line-strong);
+  border-radius: 20px; padding: 36px;
+  position: relative;
+}
+.ab-quote-block::before {
+  content: '"';
+  position: absolute; top: -10px; left: 28px;
+  font-family: var(--font-display); font-size: 80px; font-weight: 700;
+  color: var(--blue-2); line-height: 1; opacity: 0.35;
+}
+.ab-quote-block blockquote {
+  font-family: var(--font-display); font-size: 20px; font-weight: 500;
+  color: var(--text); line-height: 1.5; margin-bottom: 20px; margin-top: 16px;
+}
+.ab-quote-author { font-family: var(--font-mono); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--blue-3); }
+
+/* Values */
+.ab-values { padding: 80px 0; border-top: 1px solid var(--line); }
+.section-label {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: .22em;
+  text-transform: uppercase; color: var(--blue-2); text-align: center; margin-bottom: 12px;
+}
+.section-title {
+  font-family: var(--font-display); font-size: clamp(30px, 4vw, 46px);
+  font-weight: 700; line-height: 1.05; text-align: center; margin-bottom: 14px;
+}
+.section-sub { font-size: 16px; color: var(--muted); text-align: center; max-width: 500px; margin: 0 auto 56px; line-height: 1.6; }
+.values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.value-card {
+  background: var(--bg-card); border: 1px solid var(--line);
+  border-radius: 20px; padding: 32px;
+  transition: border-color .2s, transform .2s;
+}
+.value-card:hover { border-color: rgba(79,210,255,0.28); transform: translateY(-3px); }
+.value-ico {
+  width: 48px; height: 48px; border-radius: 12px;
+  background: rgba(79,210,255,0.1); border: 1px solid rgba(79,210,255,0.2);
+  display: grid; place-items: center; font-size: 20px; margin-bottom: 20px;
+}
+.value-card h3 { font-family: var(--font-display); font-size: 18px; font-weight: 600; color: var(--text); margin-bottom: 10px; }
+.value-card p { font-size: 14px; color: var(--muted); line-height: 1.65; }
+
+/* Stack */
+.ab-stack { padding: 80px 0; border-top: 1px solid var(--line); }
+.stack-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 48px; }
+.stack-item {
+  background: var(--bg-card); border: 1px solid var(--line);
+  border-radius: 14px; padding: 20px 18px;
+  display: flex; align-items: center; gap: 12px;
+  transition: border-color .2s;
+}
+.stack-item:hover { border-color: rgba(79,210,255,0.25); }
+.stack-ico { font-size: 22px; flex-shrink: 0; }
+.stack-name { font-size: 14px; font-weight: 500; color: var(--text); }
+.stack-cat  { font-size: 11px; color: var(--dim); margin-top: 1px; }
+
+/* Locations */
+.ab-locations { padding: 80px 0; border-top: 1px solid var(--line); }
+.loc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; margin-top: 48px; }
+.loc-card {
+  background: var(--bg-card); border: 1px solid var(--line);
+  border-radius: 20px; padding: 36px;
+  position: relative; overflow: hidden;
+}
+.loc-card::before {
+  content: '';
+  position: absolute; top: -60px; right: -60px;
+  width: 180px; height: 180px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(79,210,255,0.12), transparent 70%);
+  pointer-events: none;
+}
+.loc-flag { font-size: 36px; margin-bottom: 16px; }
+.loc-city { font-family: var(--font-display); font-size: 26px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+.loc-country { font-family: var(--font-mono); font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--blue-3); margin-bottom: 16px; }
+.loc-desc { font-size: 14.5px; color: var(--muted); line-height: 1.65; }
+
+/* Automations in progress */
+.ab-automations { padding: 80px 0; border-top: 1px solid var(--line); }
+.auto-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px;
+  margin-top: 48px;
+}
+/* last card on odd rows spans full if alone */
+.auto-grid .auto-card:last-child:nth-child(3n+1) {
+  grid-column: 1 / -1; max-width: 480px; justify-self: center;
+}
+.auto-card {
+  background: var(--bg-card); border: 1px solid var(--line);
+  border-radius: 20px; padding: 28px;
+  position: relative; overflow: hidden;
+  transition: border-color .2s, transform .2s;
+}
+.auto-card:hover { border-color: rgba(79,210,255,0.28); transform: translateY(-3px); }
+.auto-card.active-build {
+  border-color: rgba(79,210,255,0.35);
+  background: rgba(3, 7, 28, 0.88);
+}
+.auto-card.active-build::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(500px 300px at 50% -20%, rgba(79,210,255,0.07), transparent 70%);
+  pointer-events: none;
+}
+.auto-status {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-family: var(--font-mono); font-size: 9.5px; letter-spacing: .16em;
+  text-transform: uppercase; border-radius: 20px; padding: 4px 10px;
+  margin-bottom: 20px;
+}
+.auto-status.building {
+  color: var(--blue-2); background: rgba(79,210,255,0.1);
+  border: 1px solid rgba(79,210,255,0.2);
+}
+.auto-status.building::before {
+  content: '';
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--blue-2); box-shadow: 0 0 6px var(--blue-2);
+  animation: pulse 1.6s infinite; flex-shrink: 0;
+}
+.auto-status.soon {
+  color: var(--muted); background: rgba(120,165,255,0.07);
+  border: 1px solid rgba(120,165,255,0.14);
+}
+.auto-status.soon::before {
+  content: '';
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--dim); flex-shrink: 0;
+}
+.auto-ico {
+  font-size: 28px; margin-bottom: 14px; display: block;
+}
+.auto-card h3 {
+  font-family: var(--font-display); font-size: 17px; font-weight: 700;
+  color: var(--text); margin-bottom: 8px;
+}
+.auto-card p {
+  font-size: 13.5px; color: var(--muted); line-height: 1.65; margin-bottom: 18px;
+}
+.auto-tags {
+  display: flex; flex-wrap: wrap; gap: 6px;
+}
+.auto-tag {
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: .1em;
+  color: var(--dim); background: rgba(120,165,255,0.07);
+  border: 1px solid var(--line); border-radius: 20px; padding: 3px 10px;
+}
+.auto-progress-wrap {
+  margin-top: 16px;
+}
+.auto-progress-label {
+  display: flex; justify-content: space-between;
+  font-family: var(--font-mono); font-size: 10px; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--dim); margin-bottom: 6px;
+}
+.auto-progress-bar {
+  height: 3px; background: rgba(120,165,255,0.1); border-radius: 3px; overflow: hidden;
+}
+.auto-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--blue-1), var(--blue-2));
+  border-radius: 3px;
+  box-shadow: 0 0 8px rgba(79,210,255,0.5);
+}
+
+/* CTA */
+.ab-cta {
+  padding: 100px 0; text-align: center; border-top: 1px solid var(--line);
+}
+.ab-cta h2 { font-family: var(--font-display); font-size: clamp(28px, 4vw, 50px); font-weight: 700; margin-bottom: 16px; }
+.ab-cta p { font-size: 17px; color: var(--muted); margin-bottom: 36px; }
+.cta-btns { display: flex; gap: 16px; justify-content: center; }
+.btn-primary {
+  display: inline-block; padding: 16px 36px;
+  background: linear-gradient(135deg, var(--blue-2), var(--blue-1));
+  color: var(--bg-0); font-family: var(--font-display); font-size: 15px; font-weight: 700;
+  border-radius: 12px; text-decoration: none; border: 0; cursor: pointer;
+  transition: opacity .2s, transform .15s;
+}
+.btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+.btn-outline {
+  display: inline-block; padding: 16px 36px;
+  background: transparent; color: var(--blue-2);
+  font-family: var(--font-display); font-size: 15px; font-weight: 600;
+  border-radius: 12px; text-decoration: none;
+  border: 1px solid rgba(79,210,255,0.35);
+  transition: border-color .2s, background .2s;
+}
+.btn-outline:hover { border-color: var(--blue-2); background: rgba(79,210,255,0.07); }
+
+/* Footer */
+footer {
+  border-top: 1px solid var(--line); padding: 48px 40px 72px;
+  display: flex; align-items: center; justify-content: space-between;
+  max-width: 1060px; margin: 0 auto;
+}
+footer .ft-logo a { display:inline-flex; opacity:.75; transition:opacity .2s; }
+footer .ft-logo a:hover { opacity:1; }
+footer .ft-logo img { height:36px; width:auto; display:block; filter:drop-shadow(0 0 8px rgba(79,210,255,0.40)); }
+footer .ft-links { display: flex; gap: 28px; }
+footer .ft-links a { font-size: 13px; color: var(--dim); text-decoration: none; transition: color .2s; }
+footer .ft-links a:hover { color: var(--muted); }
+footer .ft-copy { font-family: var(--font-mono); font-size: 11px; color: var(--dim); }
+
+@media (max-width: 860px) {
+  .page-wrap { padding: 0 20px; }
+  .ab-mission { grid-template-columns: 1fr; gap: 40px; }
+  .values-grid { grid-template-columns: 1fr 1fr; }
+  .stack-grid { grid-template-columns: 1fr 1fr; }
+  .loc-grid { grid-template-columns: 1fr; }
+  .auto-grid { grid-template-columns: 1fr; }
+  .ab-hero-stats { flex-wrap: wrap; gap: 28px; }
+  .cta-btns { flex-direction: column; align-items: center; }
+  footer { flex-direction: column; gap: 20px; text-align: center; }
+  footer .ft-links { flex-wrap: wrap; justify-content: center; }
+  .hud-nav { display: none; }
+}
+@media (max-width: 520px) {
+  .values-grid { grid-template-columns: 1fr; }
+  .stack-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+<script src="js/reveal.js" defer></script>
+<script src="js/nav.js" defer></script>
+</head>
+<body>
+
+<div class="bg-field"></div>
+<div class="bg-grid"></div>
+<div class="bg-noise"></div>
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<!-- Nav -->
+<div class="hud-top">
+  <div class="lg"><a href="/"><img src="assets/techwon-logo.png" alt="TechWon" /></a></div>
+  <nav class="hud-nav">
+    <a href="/" class="nav-link">Home</a>
+    <a href="/services.html" class="nav-link">Services</a>
+    <a href="/about.html" class="nav-link active">About</a>
+    <a href="/contact.html" class="nav-link">Contact</a>
+  </nav>
+  <div class="hud-right">
+    <a href="https://wa.me/14027351647" target="_blank" rel="noopener" class="btn-nav">Book a Call →</a>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</div>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="/" class="m-link">Home</a>
+  <a href="/services.html" class="m-link">Services</a>
+  <a href="/about.html" class="m-link active">About</a>
+  <a href="/contact.html" class="m-link">Contact</a>
+  <a href="https://wa.me/14027351647" target="_blank" rel="noopener" class="m-cta">Book a Call →</a>
+</div>
+
+<main>
+  <div class="page-wrap">
+
+    <!-- Hero -->
+    <section class="ab-hero">
+      <div class="eyebrow">· About TechWon ·</div>
+      <h1>
+        <span class="grad">The agency</span><br/>
+        <span class="stroke">nobody built</span><br/>
+        <span class="grad">for SMBs.</span>
+      </h1>
+      <p>We started TechWon because every AI tool we saw was built for enterprises with 6-month onboarding budgets. SMBs — the clinics, dealerships, restaurants and e-commerce stores that run real economies — were being left behind. We decided to fix that.</p>
+      <div class="ab-hero-stats">
+        <div class="ab-stat"><div class="val">5</div><div class="lbl">Specialist agents</div></div>
+        <div class="ab-stat"><div class="val">20+</div><div class="lbl">Workflows automated</div></div>
+        <div class="ab-stat"><div class="val">7d</div><div class="lbl">Average go-live</div></div>
+        <div class="ab-stat"><div class="val">15+</div><div class="lbl">Languages supported</div></div>
+      </div>
+    </section>
+
+    <!-- Mission -->
+    <section class="ab-mission">
+      <div class="ab-mission-text">
+        <h2>We build AI workforces — not features.</h2>
+        <p>There's a difference between a chatbot and an agent. A chatbot answers questions. An agent takes action: it books, sells, recovers, ranks, writes, and calls — without being told to.</p>
+        <p>Our five agents (Ranko, Quill, Vega, Iris, and Otto) are purpose-built for the jobs that SMBs pay humans to do badly at 2am. We automate the entire workflow, not just the easy part of it.</p>
+        <p>We operate across the UK, US and UAE — three of the world's most competitive SMB markets. We built TechWon for businesses that move fast, expect results in days, and can't afford to wait for enterprise procurement cycles.</p>
+      </div>
+      <div class="ab-mission-visual">
+        <div class="ab-quote-block">
+          <blockquote>SMBs don't need another dashboard. They need something that just works while they sleep.</blockquote>
+          <div class="ab-quote-author">— TechWon founding principle</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values -->
+    <section class="ab-values">
+      <div class="section-label">· What we believe ·</div>
+      <h2 class="section-title">Built on three principles.</h2>
+      <p class="section-sub">Everything we ship comes back to these three ideas.</p>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-ico">⚡</div>
+          <h3>Action over advice</h3>
+          <p>We don't deliver reports and recommendations. We deliver running agents. The result is a live system that takes action in your business, not a slide deck about what you should do.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-ico">🔍</div>
+          <h3>Radical transparency</h3>
+          <p>Every interaction every agent makes is logged and visible. You see every call Iris handles, every cart Vega recovers, every rank Ranko moves. No black boxes, ever.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-ico">🤝</div>
+          <h3>SMB-first pricing</h3>
+          <p>Enterprise AI pricing is designed to exclude small businesses. Ours isn't. We priced our agents so a dental clinic in London, a restaurant in Dubai or an e-commerce store in New York can afford them on day one.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-ico">🚀</div>
+          <h3>7-day live promise</h3>
+          <p>Most AI deployments take months. Ours take a week. We've built the infrastructure to move fast without cutting corners — discovery to live agent in 7 days or less.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-ico">🌐</div>
+          <h3>Built for global markets</h3>
+          <p>English, Arabic, French and 19 more — our agents are built for the languages and business rhythms of the UK, US and UAE, and every other market you want to reach.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-ico">📈</div>
+          <h3>Revenue-first metrics</h3>
+          <p>We don't report vanity metrics. We report revenue recovered, calls handled, leads booked and rankings moved. If it doesn't move money, it doesn't make our dashboard.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tech stack -->
+    <section class="ab-stack">
+      <div class="section-label">· Our stack ·</div>
+      <h2 class="section-title">Integrations that matter.</h2>
+      <p class="section-sub">We connect to the tools your business already uses. No migration required.</p>
+      <div class="stack-grid">
+        <div class="stack-item"><span class="stack-ico">🛒</span><div><div class="stack-name">Shopify</div><div class="stack-cat">E-commerce</div></div></div>
+        <div class="stack-item"><span class="stack-ico">💳</span><div><div class="stack-name">Stripe</div><div class="stack-cat">Payments</div></div></div>
+        <div class="stack-item"><span class="stack-ico">📅</span><div><div class="stack-name">Google Calendar</div><div class="stack-cat">Scheduling</div></div></div>
+        <div class="stack-item"><span class="stack-ico">💬</span><div><div class="stack-name">WhatsApp Business</div><div class="stack-cat">Messaging</div></div></div>
+        <div class="stack-item"><span class="stack-ico">🔗</span><div><div class="stack-name">WooCommerce</div><div class="stack-cat">E-commerce</div></div></div>
+        <div class="stack-item"><span class="stack-ico">📊</span><div><div class="stack-name">HubSpot CRM</div><div class="stack-cat">CRM</div></div></div>
+        <div class="stack-item"><span class="stack-ico">📧</span><div><div class="stack-name">Outlook / Gmail</div><div class="stack-cat">Email</div></div></div>
+        <div class="stack-item"><span class="stack-ico">🏗</span><div><div class="stack-name">Custom APIs</div><div class="stack-cat">Any system</div></div></div>
+      </div>
+    </section>
+
+    <!-- Locations -->
+    <section class="ab-locations">
+      <div class="section-label">· Where we are ·</div>
+      <h2 class="section-title">UK · US · UAE</h2>
+      <p class="section-sub">Three markets. One AI operating system.</p>
+      <div class="loc-grid" style="grid-template-columns: repeat(3, 1fr);">
+        <div class="loc-card">
+          <div class="loc-flag">🇬🇧</div>
+          <div class="loc-city">London</div>
+          <div class="loc-country">United Kingdom</div>
+          <p class="loc-desc">Our UK base serving British SMBs — from independent clinics and restaurants to fast-growing e-commerce brands ready to automate without the enterprise price tag.</p>
+        </div>
+        <div class="loc-card">
+          <div class="loc-flag">🇺🇸</div>
+          <div class="loc-city">New York</div>
+          <div class="loc-country">United States</div>
+          <p class="loc-desc">Serving US businesses coast to coast. From dealerships in Texas to Shopify stores in California — Otto, Vega and Iris are live and running 24/7 across American time zones.</p>
+        </div>
+        <div class="loc-card">
+          <div class="loc-flag">🇦🇪</div>
+          <div class="loc-city">Dubai</div>
+          <div class="loc-country">United Arab Emirates</div>
+          <p class="loc-desc">Our UAE hub for the Middle East and GCC. The gateway to a region that runs on WhatsApp, moves fast, and demands multilingual AI that works on day one.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Automations in progress -->
+    <section class="ab-automations">
+      <div class="section-label">· What we're building ·</div>
+      <h2 class="section-title">Automations in progress.</h2>
+      <p class="section-sub">We're constantly expanding what our agents can do. Here's what's actively being built and what's coming next.</p>
+
+      <div class="auto-grid">
+
+        <!-- Active builds -->
+        <div class="auto-card active-build">
+          <div class="auto-status building">Building now</div>
+          <span class="auto-ico">🏥</span>
+          <h3>Clinic WhatsApp OS</h3>
+          <p>Full end-to-end automation for dental and medical clinics: appointment booking, recall reminders, insurance pre-auth, and post-visit follow-ups — all on WhatsApp in the patient's language.</p>
+          <div class="auto-tags">
+            <span class="auto-tag">Iris</span>
+            <span class="auto-tag">WhatsApp</span>
+            <span class="auto-tag">PMS integration</span>
+          </div>
+          <div class="auto-progress-wrap">
+            <div class="auto-progress-label"><span>Progress</span><span>78%</span></div>
+            <div class="auto-progress-bar"><div class="auto-progress-fill" style="width:78%"></div></div>
+          </div>
+        </div>
+
+        <div class="auto-card active-build">
+          <div class="auto-status building">Building now</div>
+          <span class="auto-ico">🚗</span>
+          <h3>AutoMind — Full Dealer OS</h3>
+          <p>Expanding Otto into a 20-agent dealership operating system: lead scoring, finance pre-qualification, service department scheduling, parts inventory alerts and post-sale retention campaigns.</p>
+          <div class="auto-tags">
+            <span class="auto-tag">Otto</span>
+            <span class="auto-tag">DMS sync</span>
+            <span class="auto-tag">Finance module</span>
+          </div>
+          <div class="auto-progress-wrap">
+            <div class="auto-progress-label"><span>Progress</span><span>62%</span></div>
+            <div class="auto-progress-bar"><div class="auto-progress-fill" style="width:62%"></div></div>
+          </div>
+        </div>
+
+        <div class="auto-card active-build">
+          <div class="auto-status building">Building now</div>
+          <span class="auto-ico">🍽️</span>
+          <h3>Restaurant Command Centre</h3>
+          <p>WhatsApp order-taking, table reservation management, kitchen ticket routing, and loyalty programme automation — designed for multi-branch F&amp;B groups across the UK, US and UAE.</p>
+          <div class="auto-tags">
+            <span class="auto-tag">Vega</span>
+            <span class="auto-tag">POS integration</span>
+            <span class="auto-tag">Multi-branch</span>
+          </div>
+          <div class="auto-progress-wrap">
+            <div class="auto-progress-label"><span>Progress</span><span>55%</span></div>
+            <div class="auto-progress-bar"><div class="auto-progress-fill" style="width:55%"></div></div>
+          </div>
+        </div>
+
+        <!-- E-Commerce module - active build -->
+        <div class="auto-card active-build">
+          <div class="auto-status building">Building now</div>
+          <span class="auto-ico">🛒</span>
+          <h3>E-Commerce Full-Stack Module</h3>
+          <p>A complete automation layer for online stores: Vega handles cart recovery, Quill writes product descriptions and email campaigns, Ranko targets commercial keywords, and Iris handles post-order support calls — all connected, all automatic.</p>
+          <div class="auto-tags">
+            <span class="auto-tag">Vega</span>
+            <span class="auto-tag">Quill</span>
+            <span class="auto-tag">Ranko</span>
+            <span class="auto-tag">Shopify / WooCommerce</span>
+          </div>
+          <div class="auto-progress-wrap">
+            <div class="auto-progress-label"><span>Progress</span><span>71%</span></div>
+            <div class="auto-progress-bar"><div class="auto-progress-fill" style="width:71%"></div></div>
+          </div>
+        </div>
+
+        <!-- Coming soon -->
+        <div class="auto-card">
+          <div class="auto-status soon">Coming soon</div>
+          <span class="auto-ico">🏠</span>
+          <h3>Real Estate Lead Engine</h3>
+          <p>Automated lead qualification, property matching, viewing scheduling and seller follow-up — built for brokerages operating on Property Finder, Bayut and Zameen.</p>
+          <div class="auto-tags">
+            <span class="auto-tag">Iris</span>
+            <span class="auto-tag">Quill</span>
+            <span class="auto-tag">CRM sync</span>
+          </div>
+        </div>
+
+        <div class="auto-card">
+          <div class="auto-status soon">Coming soon</div>
+          <span class="auto-ico">📦</span>
+          <h3>Warehouse & Logistics AI</h3>
+          <p>Inbound receiving, pick-and-pack optimisation, courier dispatch automation and returns processing — for e-commerce brands running their own fulfilment.</p>
+          <div class="auto-tags">
+            <span class="auto-tag">Vega</span>
+            <span class="auto-tag">3PL integrations</span>
+            <span class="auto-tag">Tracking</span>
+          </div>
+        </div>
+
+        <div class="auto-card">
+          <div class="auto-status soon">Coming soon</div>
+          <span class="auto-ico">🎓</span>
+          <h3>EdTech Enrolment Agent</h3>
+          <p>Automated student enquiry handling, course recommendation, fee payment follow-up and class scheduling for training institutes and universities across the UK, US and UAE.</p>
+          <div class="auto-tags">
+            <span class="auto-tag">Iris</span>
+            <span class="auto-tag">Quill</span>
+            <span class="auto-tag">LMS integration</span>
+          </div>
+        </div>
+
+      </div>
+
+      <p style="text-align:center;margin-top:36px;font-size:14px;color:var(--dim)">
+        Building something that isn't on this list?
+        <a href="/contact.html" style="color:var(--blue-2);text-decoration:none;font-weight:500"> Tell us — we'll scope it. →</a>
+      </p>
+    </section>
+
+    <!-- CTA -->
+    <section class="ab-cta">
+      <h2>Ready to <span style="color:var(--blue-2)">meet the team?</span></h2>
+      <p>See Ranko, Quill, Vega, Iris and Otto in action — live, on a 20-minute call built around your business.</p>
+      <div class="cta-btns">
+        <a href="https://wa.me/14027351647" target="_blank" rel="noopener" class="btn-primary">Book a walkthrough →</a>
+        <a href="/services.html" class="btn-outline">Explore services</a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="ft-logo"><a href="/"><img src="assets/techwon-logo.png" alt="TechWon" /></a></div>
+  <div class="ft-links">
+    <a href="/">Home</a>
+    <a href="/services.html">Services</a>
+    <a href="/about.html">About</a>
+    <a href="/contact.html">Contact</a>
+  </div>
+  <div class="ft-copy">© 2026 TechWon · business@techwon.co · <a href="https://wa.me/14027351647" target="_blank" rel="noopener" style="color:inherit">+1 (402) 735-1647</a></div>
+</footer>
+
+<script>
+(function () {
+  const g = document.getElementById('cursorGlow');
+  if (!g) return;
+  window.addEventListener('mousemove', e => {
+    g.style.left = e.clientX + 'px';
+    g.style.top  = e.clientY + 'px';
+  });
+})();
+</script>
+
+<!-- Floating WhatsApp button -->
+<a href="https://wa.me/14027351647" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+</body>
+</html>

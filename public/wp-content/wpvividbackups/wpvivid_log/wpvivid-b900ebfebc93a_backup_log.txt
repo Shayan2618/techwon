@@ -1,0 +1,16 @@
+[2025-07-21 08:07:23][notice]Start backing up.
+[2025-07-21 08:07:23][notice]server info fcgi:On max execution time: 180 wp version:6.8.2 php version:8.4.10 db version:8.0.35 php ini:safe_mode: memory_limit:512M memory_get_usage:144.90 MB memory_get_peak_usage:145.72 MB extensions:PDO enabled curl enabled zlib enabled   is_multisite:0
+[2025-07-21 08:07:23][notice]Prepare to backup backup_plugin files.
+[2025-07-21 08:07:59][notice]Compressing zip file:techwon.co_wpvivid-b900ebfebc93a_2025-07-21-07-15_backup_plugin.part001.zip index:13684
+[2025-07-21 15:31:06][notice]Start backing up.
+[2025-07-21 15:31:06][notice]server info fcgi:On max execution time: 180 wp version:6.8.2 php version:8.4.10 db version:8.0.35 php ini:safe_mode: memory_limit:512M memory_get_usage:145.01 MB memory_get_peak_usage:145.77 MB extensions:PDO enabled curl enabled zlib enabled   is_multisite:0
+[2025-07-21 15:31:06][notice]Prepare to backup backup_plugin files.
+[2025-07-21 15:31:22][notice]Compressing zip file:techwon.co_wpvivid-b900ebfebc93a_2025-07-21-07-15_backup_plugin.part001.zip index:13684
+[2025-07-21 15:40:00][notice]Start backing up.
+[2025-07-21 15:40:00][notice]server info fcgi:On max execution time: 180 wp version:6.8.2 php version:8.4.10 db version:8.0.35 php ini:safe_mode: memory_limit:512M memory_get_usage:144.90 MB memory_get_peak_usage:145.72 MB extensions:PDO enabled curl enabled zlib enabled   is_multisite:0
+[2025-07-21 15:40:00][notice]Prepare to backup backup_plugin files.
+[2025-07-21 15:40:16][notice]Compressing zip file:techwon.co_wpvivid-b900ebfebc93a_2025-07-21-07-15_backup_plugin.part001.zip index:13684
+[2025-07-21 15:46:01][notice]Start backing up.
+[2025-07-21 15:46:01][notice]server info fcgi:On max execution time: 180 wp version:6.8.2 php version:8.4.10 db version:8.0.35 php ini:safe_mode: memory_limit:512M memory_get_usage:144.90 MB memory_get_peak_usage:145.72 MB extensions:PDO enabled curl enabled zlib enabled   is_multisite:0
+[2025-07-21 15:46:01][notice]Prepare to backup backup_plugin files.
+[2025-07-21 15:46:26][notice]Compressing zip file:techwon.co_wpvivid-b900ebfebc93a_2025-07-21-07-15_backup_plugin.part001.zip index:13684

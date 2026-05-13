@@ -1,0 +1,372 @@
+/* ---------- Logo — transparent PNG, glow style ---------- */
+.hud-top .lg {
+  padding: 0;
+  background: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+/* Logo img sizing lives in styles.css so it applies on all pages */
+
+.f1-logo-wrap {
+  position: relative;
+  padding: 0;
+  background: none;
+  border: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+}
+.f1-logo-wrap::before { display: none; }
+
+/* ---------- Per-frame scene backgrounds ---------- */
+.scene-bg {
+  position: absolute; inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.frame > *:not(.scene-bg):not(.orbit-scene):not(.f1-mascots) { position: relative; z-index: 2; }
+
+/* === Ranko scene: floating SERP positions === */
+.sbg-ranko .chip {
+  position: absolute;
+  font-family: var(--font-mono); font-size: 11px;
+  padding: 5px 10px; border-radius: 999px;
+  background: rgba(8,22,64,0.6);
+  border: 1px solid rgba(79,210,255,0.25);
+  color: var(--blue-2);
+  opacity: 0.5;
+  animation: floatUp 12s linear infinite;
+}
+@keyframes floatUp {
+  0% { transform: translateY(120vh) translateX(0); opacity: 0; }
+  10% { opacity: 0.55; }
+  90% { opacity: 0.55; }
+  100% { transform: translateY(-20vh) translateX(40px); opacity: 0; }
+}
+.sbg-ranko .arrow {
+  position: absolute;
+  font-family: var(--font-mono);
+  color: var(--blue-2);
+  font-size: 14px;
+  opacity: 0.3;
+  animation: floatUp 14s linear infinite;
+}
+
+/* === Quill scene: floating type lines === */
+.sbg-quill .line {
+  position: absolute;
+  height: 6px; border-radius: 3px;
+  background: linear-gradient(90deg, rgba(79,210,255,0.4), rgba(45,156,255,0.1));
+  opacity: 0;
+  animation: typeIn 7s ease-in-out infinite;
+}
+@keyframes typeIn {
+  0% { width: 0; opacity: 0; }
+  20% { opacity: 0.45; }
+  50% { width: 280px; opacity: 0.45; }
+  80% { opacity: 0; }
+  100% { width: 280px; opacity: 0; }
+}
+.sbg-quill .doc {
+  position: absolute;
+  width: 110px; height: 140px;
+  background: rgba(8,22,64,0.5);
+  border: 1px solid rgba(79,210,255,0.25);
+  border-radius: 6px;
+  opacity: 0.3;
+  animation: docDrift 18s linear infinite;
+}
+.sbg-quill .doc::before, .sbg-quill .doc::after {
+  content: "";
+  position: absolute;
+  left: 12px; right: 12px;
+  height: 2px; border-radius: 2px;
+  background: rgba(120,165,255,0.5);
+}
+.sbg-quill .doc::before { top: 20px; }
+.sbg-quill .doc::after { top: 30px; right: 30px; }
+@keyframes docDrift {
+  0% { transform: translateX(-200px) translateY(60vh) rotate(-8deg); opacity: 0; }
+  20% { opacity: 0.3; }
+  80% { opacity: 0.3; }
+  100% { transform: translateX(110vw) translateY(20vh) rotate(8deg); opacity: 0; }
+}
+
+/* === Vega scene: ecommerce ordering animation === */
+.sbg-vega {
+  display: flex; align-items: center;
+}
+.vega-track {
+  position: absolute;
+  width: 100%; height: 100%;
+}
+/* horizontal road */
+.vega-track::before {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 22%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(79,210,255,0.4) 20%, rgba(79,210,255,0.4) 80%, transparent);
+  opacity: 0.5;
+}
+.vega-track::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 22%;
+  height: 1px;
+  background-image: linear-gradient(90deg, transparent 0, transparent 30px, var(--blue-2) 30px, var(--blue-2) 50px);
+  background-size: 80px 1px;
+  opacity: 0.5;
+  animation: roadMove 2s linear infinite;
+}
+@keyframes roadMove {
+  to { background-position: -80px 0; }
+}
+
+/* product cards drifting */
+.vega-prod {
+  position: absolute;
+  width: 56px; height: 56px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(79,210,255,0.25), rgba(45,156,255,0.15));
+  border: 1px solid rgba(79,210,255,0.4);
+  display: grid; place-items: center;
+  font-size: 22px;
+  opacity: 0;
+  animation: prodFlow 8s ease-in-out infinite;
+}
+@keyframes prodFlow {
+  0% { transform: translate(-80px, 0) scale(0.6); opacity: 0; }
+  15% { opacity: 0.7; transform: translate(0, 0) scale(1); }
+  40% { transform: translate(35vw, -30px) scale(1); opacity: 0.7; }
+  55% { transform: translate(35vw, 0) scale(0.4); opacity: 0; }
+  100% { opacity: 0; }
+}
+/* cart catcher in mid-screen */
+.vega-cart {
+  position: absolute;
+  left: 38vw; top: 50%;
+  transform: translateY(-50%);
+  width: 80px; height: 80px;
+  border: 2px solid rgba(79,210,255,0.4);
+  border-radius: 14px;
+  background: rgba(8,22,64,0.5);
+  display: grid; place-items: center;
+  font-size: 32px;
+  animation: cartBob 2s ease-in-out infinite;
+  opacity: 0.65;
+}
+@keyframes cartBob {
+  0%, 100% { transform: translateY(calc(-50% - 4px)); }
+  50% { transform: translateY(calc(-50% + 4px)); }
+}
+.vega-cart::after {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border: 1px dashed rgba(79,210,255,0.3);
+  border-radius: 18px;
+  animation: cartPulse 2s ease-out infinite;
+}
+@keyframes cartPulse {
+  0% { transform: scale(0.9); opacity: 0.6; }
+  100% { transform: scale(1.3); opacity: 0; }
+}
+/* package box exiting */
+.vega-pkg {
+  position: absolute;
+  left: 45vw; bottom: 25%;
+  width: 44px; height: 44px;
+  background: linear-gradient(180deg, rgba(123,184,255,0.6), rgba(45,156,255,0.4));
+  border: 1px solid rgba(157,229,255,0.6);
+  border-radius: 4px;
+  opacity: 0;
+  animation: pkgRoll 8s ease-in-out infinite;
+}
+.vega-pkg::before, .vega-pkg::after {
+  content: ""; position: absolute;
+  background: rgba(157,229,255,0.5);
+}
+.vega-pkg::before { left: 0; right: 0; top: 50%; height: 1px; }
+.vega-pkg::after { top: 0; bottom: 0; left: 50%; width: 1px; }
+@keyframes pkgRoll {
+  0% { opacity: 0; transform: translateX(0) rotate(0); }
+  60% { opacity: 0; }
+  65% { opacity: 0.75; transform: translateX(0) rotate(0); }
+  100% { opacity: 0.75; transform: translateX(60vw) rotate(360deg); }
+}
+/* delivery truck */
+.vega-truck {
+  position: absolute;
+  bottom: 18%;
+  left: -180px;
+  width: 140px; height: 60px;
+  opacity: 0.7;
+  animation: truckDrive 9s linear infinite;
+}
+@keyframes truckDrive {
+  0% { left: -180px; }
+  100% { left: 110vw; }
+}
+.vega-truck .cab {
+  position: absolute;
+  right: 0; top: 12px;
+  width: 50px; height: 36px;
+  background: linear-gradient(180deg, rgba(123,184,255,0.7), rgba(45,156,255,0.5));
+  border: 1px solid rgba(157,229,255,0.7);
+  border-radius: 8px 12px 0 0;
+}
+.vega-truck .cab::before {
+  content: ""; position: absolute;
+  top: 6px; left: 6px; right: 6px; height: 14px;
+  background: rgba(2,6,22,0.6);
+  border-radius: 4px 8px 0 0;
+}
+.vega-truck .trailer {
+  position: absolute;
+  right: 50px; top: 0;
+  width: 90px; height: 48px;
+  background: rgba(14,28,79,0.7);
+  border: 1px solid rgba(120,165,255,0.5);
+  border-radius: 6px;
+}
+.vega-truck .trailer::before {
+  content: "📦"; position: absolute;
+  left: 50%; top: 50%; transform: translate(-50%,-50%);
+  font-size: 22px;
+}
+.vega-truck .wheel {
+  position: absolute; bottom: -8px;
+  width: 16px; height: 16px; border-radius: 50%;
+  background: #020616; border: 2px solid var(--blue-2);
+  box-shadow: 0 0 8px rgba(79,210,255,0.5);
+  animation: spin1 0.4s linear infinite;
+}
+.vega-truck .wheel.w1 { left: 18px; }
+.vega-truck .wheel.w2 { left: 96px; }
+.vega-truck .wheel.w3 { left: 112px; }
+@keyframes spin1 { to { transform: rotate(360deg); } }
+
+/* === Iris scene: rippling soundwaves + phone bubbles === */
+.sbg-iris .wave {
+  position: absolute;
+  border: 1px solid rgba(79,210,255,0.4);
+  border-radius: 50%;
+  animation: waveRipple 5s linear infinite;
+}
+@keyframes waveRipple {
+  0% { width: 20px; height: 20px; opacity: 0.6; }
+  100% { width: 800px; height: 800px; opacity: 0; }
+}
+.sbg-iris .bubble {
+  position: absolute;
+  padding: 6px 14px;
+  background: rgba(8,22,64,0.7);
+  border: 1px solid rgba(79,210,255,0.3);
+  border-radius: 14px;
+  font-family: var(--font-mono); font-size: 11px;
+  color: var(--blue-2);
+  opacity: 0;
+  animation: bubblePop 8s ease-in-out infinite;
+}
+.sbg-iris .bubble::before { content: "📞 "; }
+@keyframes bubblePop {
+  0% { transform: scale(0.7) translateY(20px); opacity: 0; }
+  20% { transform: scale(1) translateY(0); opacity: 0.7; }
+  80% { opacity: 0.7; }
+  100% { transform: scale(1) translateY(-40px); opacity: 0; }
+}
+
+/* === Otto featured badge — pull attention to dealers === */
+.sbg-otto::before {
+  content: "★ FEATURED · CAR DEALERSHIPS";
+  position: absolute;
+  top: 6%; left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-mono);
+  font-size: 11px; letter-spacing: 0.32em;
+  padding: 8px 18px;
+  color: #02112B;
+  background: linear-gradient(90deg, var(--blue-2), var(--blue-1));
+  border-radius: 999px;
+  box-shadow: 0 16px 50px -10px rgba(79,210,255,0.7);
+  animation: ottoBadge 3s ease-in-out infinite;
+  z-index: 3;
+}
+@keyframes ottoBadge {
+  0%, 100% { transform: translateX(-50%) translateY(0); box-shadow: 0 16px 50px -10px rgba(79,210,255,0.7); }
+  50% { transform: translateX(-50%) translateY(-4px); box-shadow: 0 24px 60px -10px rgba(79,210,255,0.95); }
+}
+
+/* Spotlight beam behind Otto frame */
+.sbg-otto::after {
+  content: "";
+  position: absolute;
+  left: 50%; top: 50%;
+  width: 1400px; height: 700px;
+  transform: translate(-50%, -45%);
+  background: radial-gradient(ellipse at center, rgba(79,210,255,0.18), transparent 60%);
+  pointer-events: none;
+  animation: spotlightPulse 4s ease-in-out infinite;
+}
+@keyframes spotlightPulse {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+/* === Otto scene: highway + driving cars === */
+.sbg-otto .road {
+  position: absolute;
+  left: 0; right: 0; bottom: 18%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(79,210,255,0.5) 20%, rgba(79,210,255,0.5) 80%, transparent);
+}
+.sbg-otto .road::after {
+  content: ""; position: absolute; inset: 0;
+  background-image: linear-gradient(90deg, transparent 0, transparent 40px, var(--blue-2) 40px, var(--blue-2) 70px);
+  background-size: 100px 1px;
+  animation: roadMove 1.5s linear infinite;
+}
+.sbg-otto .car {
+  position: absolute;
+  bottom: 18%;
+  width: 80px; height: 32px;
+  margin-bottom: 4px;
+  opacity: 0.65;
+  animation: carDrive 6s linear infinite;
+}
+.sbg-otto .car .body {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, var(--blue-2), var(--blue-1));
+  clip-path: polygon(10% 50%, 22% 10%, 70% 10%, 86% 50%, 100% 50%, 100% 90%, 0% 90%, 0% 50%);
+  border-radius: 4px;
+}
+.sbg-otto .car .body::before {
+  content: ""; position: absolute;
+  left: 30%; right: 16%; top: 15%; bottom: 50%;
+  background: rgba(2,6,22,0.7); border-radius: 3px;
+}
+.sbg-otto .car .wheel {
+  position: absolute; bottom: -4px;
+  width: 12px; height: 12px; border-radius: 50%;
+  background: #020616; border: 1.5px solid var(--blue-2);
+}
+.sbg-otto .car .wheel.l { left: 12px; }
+.sbg-otto .car .wheel.r { right: 12px; }
+@keyframes carDrive {
+  0% { left: -120px; }
+  100% { left: 110vw; }
+}
+
+/* === f2 scene: connected network nodes === */
+.sbg-network .node {
+  position: absolute;
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--blue-2);
+  box-shadow: 0 0 12px var(--blue-2);
+  animation: nodePulse 3s ease-in-out infinite;
+}
+@keyframes nodePulse {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.5); opacity: 1; }
+}

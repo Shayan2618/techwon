@@ -1,0 +1,171 @@
+/* ============================================================
+   Frame 1 — hero entry with SaaS-style staggered reveals
+   ============================================================ */
+
+/* ---------- Keyframes ---------- */
+@keyframes lineUp {
+  from { transform: translateY(110%); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.4; transform: translateY(0); }
+  50%       { opacity: 0.9; transform: translateY(5px); }
+}
+
+/* ---------- Hero container ---------- */
+.f1-hero {
+  position: relative;
+  z-index: 4;
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 24px;
+  text-align: center;
+  pointer-events: none;
+}
+
+/* ---------- Eyebrow badge ---------- */
+.f1-eye {
+  display: inline-block;
+  font: 500 11px/1 'JetBrains Mono', monospace;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--blue-2);
+  padding: 8px 14px;
+  border: 1px solid rgba(123,184,255,0.3);
+  border-radius: 999px;
+  background: rgba(8,22,64,0.35);
+  backdrop-filter: blur(8px);
+  margin-bottom: 18px;
+  /* initial hidden state — animation reveals it */
+  opacity: 0;
+  animation: fadeUp 0.75s cubic-bezier(0.16,1,0.3,1) forwards;
+  animation-delay: 1.90s;
+}
+
+/* ---------- H1 with clip-reveal lines ---------- */
+.f1-h1 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: clamp(36px, 5.5vw, 72px);
+  line-height: 1.0;
+  letter-spacing: -0.025em;
+  margin: 0 0 16px;
+}
+
+/* Reveal-line wrapper: clips the child during slide-up */
+.f1-h1 .rl {
+  display: block;
+  overflow: hidden;
+  line-height: 1.05;
+}
+.f1-h1 .rl > * {
+  display: block;
+  opacity: 0;
+  transform: translateY(110%);
+  animation: lineUp 0.82s cubic-bezier(0.16,1,0.3,1) forwards;
+}
+.f1-h1 .rl:nth-child(1) > * { animation-delay: 2.05s; }
+.f1-h1 .rl:nth-child(2) > * { animation-delay: 2.22s; }
+.f1-h1 .rl:nth-child(3) > * { animation-delay: 2.39s; }
+
+/* Gradient and stroke treatments */
+.f1-h1 .grad {
+  background: linear-gradient(180deg, #EAF2FF 0%, #7BB8FF 60%, #4FD2FF 100%);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+}
+.f1-h1 .stroke {
+  -webkit-text-stroke: 1.5px rgba(123,184,255,0.7);
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* ---------- Subheading / hook ---------- */
+.f1-hook {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: clamp(14px, 1.4vw, 18px);
+  line-height: 1.6;
+  color: #C8D3E8;
+  max-width: 600px;
+  margin: 0 auto 20px;
+  text-wrap: pretty;
+  opacity: 0;
+  animation: fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) forwards;
+  animation-delay: 2.60s;
+}
+.f1-hook b {
+  color: #EAF2FF;
+  font-weight: 600;
+}
+
+/* ---------- Stats row ---------- */
+.f1-stats {
+  display: flex;
+  justify-content: center;
+  gap: clamp(18px, 3.5vw, 48px);
+  margin: 0 auto 24px;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) forwards;
+  animation-delay: 2.80s;
+}
+.f1-stats > div {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 4px;
+}
+.f1-stats b {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(24px, 3vw, 40px);
+  font-weight: 700;
+  line-height: 1;
+  background: linear-gradient(135deg, #9DE5FF, #4FD2FF);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.f1-stats span {
+  font: 500 10px/1 'JetBrains Mono', monospace;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #6D7DA0;
+}
+
+/* ---------- Scroll hint ---------- */
+.f1-scroll {
+  font: 500 10px/1 'JetBrains Mono', monospace;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #6D7DA0;
+  opacity: 0;
+  animation:
+    fadeUp    0.7s cubic-bezier(0.16,1,0.3,1) forwards 3.05s,
+    scrollPulse 2.4s ease-in-out infinite 3.75s;
+}
+
+/* Identity tags under each floating mascot */
+.f1-mascots .m { position: relative; }
+.f1-mascots .m .badge-tag {
+  position: absolute;
+  left: 50%;
+  bottom: -22px;
+  transform: translateX(-50%);
+  font: 500 9px/1 'JetBrains Mono', monospace;
+  letter-spacing: 0.18em;
+  color: var(--blue-2);
+  background: rgba(8,22,64,0.7);
+  border: 1px solid rgba(79,210,255,0.35);
+  border-radius: 999px;
+  padding: 4px 8px;
+  white-space: nowrap;
+  backdrop-filter: blur(6px);
+  opacity: 0.85;
+}
+
+@media (max-width: 720px) {
+  .f1-stats { gap: 16px; }
+  .f1-mascots .m .badge-tag { font-size: 8px; padding: 3px 6px; }
+}

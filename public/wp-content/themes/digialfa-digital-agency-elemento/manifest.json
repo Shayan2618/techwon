@@ -1,0 +1,1067 @@
+{
+    "manifest_version": "1.0.23",
+    "title": "DigiAlfa",
+    "page_builder": "elementor",
+    "kit_version": "1.0.2",
+    "templates": [
+        {
+            "name": "Global Kit Styles",
+            "screenshot": "screenshots\/global-kit-styles.jpg",
+            "source": "templates\/global.json",
+            "preview_url": "https:\/\/unicktheme.com\/kit-seacab",
+            "type": "section",
+            "category": "page",
+            "metadata": {
+                "template_type": "global-styles",
+                "include_in_zip": "1",
+                "elementor_pro_required": null,
+                "additional_template_information": [
+                    "These are the global theme styles configured through the Elementor Theme Styles area."
+                ]
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Header",
+            "screenshot": "screenshots\/header.png",
+            "source": "templates\/header.json",
+            "preview_url": "https:\/\/unicktheme.com\/kit-seacab\/template-kit\/header\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-header",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Footer",
+            "screenshot": "screenshots\/footer.png",
+            "source": "templates\/footer.json",
+            "preview_url": "https:\/\/unicktheme.com\/kit-seacab\/template-kit\/footer\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-footer",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Home",
+            "screenshot": "screenshots\/home.png",
+            "source": "templates\/home.json",
+            "preview_url": "https:\/\/unicktheme.com\/kit-seacab\/template-kit\/home-light\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "About",
+            "screenshot": "screenshots\/about.png",
+            "source": "templates\/about.json",
+            "preview_url": "https:\/\/unicktheme.com\/kit-seacab\/template-kit\/about\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Services",
+            "screenshot": "screenshots\/services.png",
+            "source": "templates\/services.json",
+            "preview_url": "https:\/\/unicktheme.com\/kit-seacab\/template-kit\/services\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Services Details",
+            "screenshot": "screenshots\/services-details.png",
+            "source": "templates\/services-details.json",
+            "preview_url": "https:\/\/unicktheme.com\/kit-seacab\/template-kit\/services-details\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Case Studies",
+            "screenshot": "screenshots\/case-studies.png",
+            "source": "templates\/case-studies.json",
+            "preview_url": "https:\/\/unicktheme.com\/kit-seacab\/template-kit\/case-studies\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Pricing",
+            "screenshot": "screenshots\/pricing.png",
+            "source": "templates\/pricing.json",
+            "preview_url": "https:\/\/unicktheme.com\/kit-seacab\/template-kit\/pricing\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Testimonials",
+            "screenshot": "screenshots\/testimonials.png",
+            "source": "templates\/testimonials.json",
+            "preview_url": "https:\/\/unicktheme.com\/kit-seacab\/template-kit\/testimonials\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Team",
+            "screenshot": "screenshots\/team.png",
+            "source": "templates\/team.json",
+            "preview_url": "https:\/\/unicktheme.com\/kit-seacab\/template-kit\/team\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Error 404",
+            "screenshot": "screenshots\/error-404.png",
+            "source": "templates\/error-404.json",
+            "preview_url": "https:\/\/unicktheme.com\/kit-seacab\/template-kit\/error-404\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-404",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Blog",
+            "screenshot": "screenshots\/blog.png",
+            "source": "templates\/blog.json",
+            "preview_url": "https:\/\/unicktheme.com\/kit-seacab\/template-kit\/blog\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "archive-blog",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Blog Details",
+            "screenshot": "screenshots\/blog-details.png",
+            "source": "templates\/blog-details.json",
+            "preview_url": "https:\/\/unicktheme.com\/kit-seacab\/template-kit\/blog-details\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-post",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Newsletter",
+            "screenshot": "screenshots\/newsletter.png",
+            "source": "templates\/newsletter.json",
+            "preview_url": "https:\/\/unicktheme.com\/kit-seacab\/template-kit\/newsletter\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "GET QUOTATION Metform",
+            "screenshot": "screenshots\/get-quotation-metform.png",
+            "source": "templates\/get-quotation-metform.json",
+            "preview_url": "https:\/\/unicktheme.com\/kit-seacab\/template-kit\/get-quotation-metform\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Contact Metform",
+            "screenshot": "screenshots\/contact-metform.png",
+            "source": "templates\/contact-metform.json",
+            "preview_url": "https:\/\/unicktheme.com\/kit-seacab\/template-kit\/contact-metform\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Contact",
+            "screenshot": "screenshots\/contact.png",
+            "source": "templates\/contact.json",
+            "preview_url": "https:\/\/unicktheme.com\/kit-seacab\/template-kit\/contact\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        }
+    ],
+    "required_plugins": [
+        {
+            "name": "Elementor",
+            "version": "3.28.1",
+            "file": "elementor\/elementor.php",
+            "author": "Elementor.com"
+        },
+        {
+            "name": "ElementsKit Lite",
+            "version": "3.4.7",
+            "file": "elementskit-lite\/elementskit-lite.php",
+            "author": "Wpmet"
+        },
+        {
+            "name": "MetForm",
+            "version": "3.9.6",
+            "file": "metform\/metform.php",
+            "author": "Wpmet"
+        },
+        {
+            "name": "RomethemeKit For Elementor",
+            "version": "1.5.6",
+            "file": "rometheme-for-elementor\/RomeTheme.php",
+            "author": "Rometheme"
+        },
+        {
+            "name": "Skyboot Custom Icons for Elementor - Elementor Icons library",
+            "version": "1.0.8",
+            "file": "skyboot-custom-icons-for-elementor\/skyboot-custom-icons-for-elementor.php",
+            "author": "Skybootstrap"
+        }
+    ],
+    "images": [
+        {
+            "filename": "digi-alfa-white-1-1.png",
+            "thumbnail_url": "https:\/\/unicktheme.com\/kit-seacab\/wp-content\/uploads\/2024\/11\/digi-alfa-white-1-1.png",
+            "templates": [
+                {
+                    "source": "templates\/header.json",
+                    "name": "Header"
+                },
+                {
+                    "source": "templates\/footer.json",
+                    "name": "Footer"
+                }
+            ],
+            "filesize": 4265,
+            "dimensions": [
+                405,
+                81
+            ],
+            "image_source": "self_created",
+            "image_urls": "#"
+        },
+        {
+            "filename": "pack-sapphire-1-1-4.jpg",
+            "thumbnail_url": "https:\/\/unicktheme.com\/kit-seacab\/wp-content\/uploads\/2024\/11\/pack-sapphire-1-1-4.jpg",
+            "templates": [
+                {
+                    "source": "templates\/footer.json",
+                    "name": "Footer"
+                },
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/team.json",
+                    "name": "Team"
+                }
+            ],
+            "filesize": 17278,
+            "dimensions": [
+                260,
+                279
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/young-cheerful-programmer-with-headphones-looking--EN2AWVQ"
+        },
+        {
+            "filename": "pack-sapphire-1-1-3.jpg",
+            "thumbnail_url": "https:\/\/unicktheme.com\/kit-seacab\/wp-content\/uploads\/2024\/11\/pack-sapphire-1-1-3.jpg",
+            "templates": [
+                {
+                    "source": "templates\/footer.json",
+                    "name": "Footer"
+                },
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/team.json",
+                    "name": "Team"
+                }
+            ],
+            "filesize": 14766,
+            "dimensions": [
+                260,
+                279
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/attractive-girl-at-work-PE98VZK"
+        },
+        {
+            "filename": "pack-sapphire-1-1-2.jpg",
+            "thumbnail_url": "https:\/\/unicktheme.com\/kit-seacab\/wp-content\/uploads\/2024\/11\/pack-sapphire-1-1-2.jpg",
+            "templates": [
+                {
+                    "source": "templates\/footer.json",
+                    "name": "Footer"
+                },
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/team.json",
+                    "name": "Team"
+                }
+            ],
+            "filesize": 16089,
+            "dimensions": [
+                260,
+                279
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/cheerful-programmer-smiling-at-camera-while-sittin-UP59SAX"
+        },
+        {
+            "filename": "client-testimonial-shots-face-testimonial-person-female-woman-smile-transparent-png-1328807.jpg",
+            "thumbnail_url": "https:\/\/unicktheme.com\/kit-seacab\/wp-content\/uploads\/2024\/11\/client-testimonial-shots-face-testimonial-person-female-woman-smile-transparent-png-1328807.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                }
+            ],
+            "filesize": 145512,
+            "dimensions": [
+                1000,
+                860
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/attractive-girl-at-work-PE98VZK"
+        },
+        {
+            "filename": "NpdUjW9UjwCDHv4pyCPRXBlh5s-797x1024-removebg-e1732211418536.png",
+            "thumbnail_url": "https:\/\/unicktheme.com\/kit-seacab\/wp-content\/uploads\/2024\/11\/NpdUjW9UjwCDHv4pyCPRXBlh5s-797x1024-removebg-e1732211418536.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                }
+            ],
+            "filesize": 160773,
+            "dimensions": [
+                700,
+                899
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-1418536"
+        },
+        {
+            "filename": "162140823_435928361028866_4741351907575033450_n-6.jpg",
+            "thumbnail_url": "https:\/\/unicktheme.com\/kit-seacab\/wp-content\/uploads\/2024\/11\/162140823_435928361028866_4741351907575033450_n-6.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                }
+            ],
+            "filesize": 129975,
+            "dimensions": [
+                1080,
+                1080
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/group-of-young-businesspeople-looking-at-laptop-sc-KR7WQU3"
+        },
+        {
+            "filename": "Nuovo-progetto-97-725x545-1-1-1.jpg",
+            "thumbnail_url": "https:\/\/unicktheme.com\/kit-seacab\/wp-content\/uploads\/2024\/11\/Nuovo-progetto-97-725x545-1-1-1.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                }
+            ],
+            "filesize": 82240,
+            "dimensions": [
+                665,
+                500
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/young-cheerful-programmer-with-headphones-looking--EN2AWVQ"
+        },
+        {
+            "filename": "Nuovo-progetto-97-725x545-1-2.jpg",
+            "thumbnail_url": "https:\/\/unicktheme.com\/kit-seacab\/wp-content\/uploads\/2024\/11\/Nuovo-progetto-97-725x545-1-2.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                }
+            ],
+            "filesize": 60000,
+            "dimensions": [
+                665,
+                500
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/picture-of-architects-working-together-in-office-QSEWTGF"
+        },
+        {
+            "filename": "ragazzi-725x545-1-1.jpg",
+            "thumbnail_url": "https:\/\/unicktheme.com\/kit-seacab\/wp-content\/uploads\/2024\/11\/ragazzi-725x545-1-1.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                }
+            ],
+            "filesize": 85270,
+            "dimensions": [
+                665,
+                500
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/male-and-female-architects-with-laptop-meeting-and-SPKZS94"
+        },
+        {
+            "filename": "logoipsum-325-svg-1-1.png",
+            "thumbnail_url": "https:\/\/unicktheme.com\/kit-seacab\/wp-content\/uploads\/2025\/03\/logoipsum-325-svg-1-1.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/case-studies.json",
+                    "name": "Case Studies"
+                },
+                {
+                    "source": "templates\/pricing.json",
+                    "name": "Pricing"
+                },
+                {
+                    "source": "templates\/testimonials.json",
+                    "name": "Testimonials"
+                },
+                {
+                    "source": "templates\/blog-details.json",
+                    "name": "Blog Details"
+                }
+            ],
+            "filesize": 2167,
+            "dimensions": [
+                220,
+                40
+            ],
+            "image_source": "self_created",
+            "image_urls": "#"
+        },
+        {
+            "filename": "logoipsum-325-svg-1-1-1.png",
+            "thumbnail_url": "https:\/\/unicktheme.com\/kit-seacab\/wp-content\/uploads\/2025\/03\/logoipsum-325-svg-1-1-1.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/case-studies.json",
+                    "name": "Case Studies"
+                },
+                {
+                    "source": "templates\/pricing.json",
+                    "name": "Pricing"
+                },
+                {
+                    "source": "templates\/testimonials.json",
+                    "name": "Testimonials"
+                },
+                {
+                    "source": "templates\/blog-details.json",
+                    "name": "Blog Details"
+                }
+            ],
+            "filesize": 2167,
+            "dimensions": [
+                220,
+                40
+            ],
+            "image_source": "self_created",
+            "image_urls": "#"
+        },
+        {
+            "filename": "logoipsum-325-svg-1-1-2.png",
+            "thumbnail_url": "https:\/\/unicktheme.com\/kit-seacab\/wp-content\/uploads\/2025\/03\/logoipsum-325-svg-1-1-2.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/case-studies.json",
+                    "name": "Case Studies"
+                },
+                {
+                    "source": "templates\/pricing.json",
+                    "name": "Pricing"
+                },
+                {
+                    "source": "templates\/testimonials.json",
+                    "name": "Testimonials"
+                },
+                {
+                    "source": "templates\/blog-details.json",
+                    "name": "Blog Details"
+                }
+            ],
+            "filesize": 2167,
+            "dimensions": [
+                220,
+                40
+            ],
+            "image_source": "self_created",
+            "image_urls": "#"
+        },
+        {
+            "filename": "logoipsum-325-svg-1-1-3.png",
+            "thumbnail_url": "https:\/\/unicktheme.com\/kit-seacab\/wp-content\/uploads\/2025\/03\/logoipsum-325-svg-1-1-3.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/case-studies.json",
+                    "name": "Case Studies"
+                },
+                {
+                    "source": "templates\/pricing.json",
+                    "name": "Pricing"
+                },
+                {
+                    "source": "templates\/testimonials.json",
+                    "name": "Testimonials"
+                },
+                {
+                    "source": "templates\/blog-details.json",
+                    "name": "Blog Details"
+                }
+            ],
+            "filesize": 2167,
+            "dimensions": [
+                220,
+                40
+            ],
+            "image_source": "self_created",
+            "image_urls": "#"
+        },
+        {
+            "filename": "logoipsum-325-svg-1-1-4.png",
+            "thumbnail_url": "https:\/\/unicktheme.com\/kit-seacab\/wp-content\/uploads\/2025\/03\/logoipsum-325-svg-1-1-4.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/case-studies.json",
+                    "name": "Case Studies"
+                },
+                {
+                    "source": "templates\/pricing.json",
+                    "name": "Pricing"
+                },
+                {
+                    "source": "templates\/testimonials.json",
+                    "name": "Testimonials"
+                },
+                {
+                    "source": "templates\/blog-details.json",
+                    "name": "Blog Details"
+                }
+            ],
+            "filesize": 2167,
+            "dimensions": [
+                220,
+                40
+            ],
+            "image_source": "self_created",
+            "image_urls": "#"
+        },
+        {
+            "filename": "admin-ajax-5.jpg",
+            "thumbnail_url": "https:\/\/unicktheme.com\/kit-seacab\/wp-content\/uploads\/2024\/11\/admin-ajax-5.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/case-studies.json",
+                    "name": "Case Studies"
+                }
+            ],
+            "filesize": 54270,
+            "dimensions": [
+                400,
+                490
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/young-caucasian-female-graphic-designer-working-on-F7SDUEX"
+        },
+        {
+            "filename": "admin-ajax-5-1.jpg",
+            "thumbnail_url": "https:\/\/unicktheme.com\/kit-seacab\/wp-content\/uploads\/2024\/11\/admin-ajax-5-1.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/case-studies.json",
+                    "name": "Case Studies"
+                },
+                {
+                    "source": "templates\/team.json",
+                    "name": "Team"
+                }
+            ],
+            "filesize": 45067,
+            "dimensions": [
+                400,
+                490
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/image-of-programmer-man-showing-thumb-up-while-tak-NP9XY69"
+        },
+        {
+            "filename": "admin-ajax-5-1-2-1.jpg",
+            "thumbnail_url": "https:\/\/unicktheme.com\/kit-seacab\/wp-content\/uploads\/2024\/11\/admin-ajax-5-1-2-1.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/case-studies.json",
+                    "name": "Case Studies"
+                }
+            ],
+            "filesize": 61407,
+            "dimensions": [
+                400,
+                490
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/woman-leisure-handmade-using-laptop-PJSEBM4"
+        },
+        {
+            "filename": "shape-3.png",
+            "thumbnail_url": "https:\/\/unicktheme.com\/kit-seacab\/wp-content\/uploads\/2025\/03\/shape-3.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/services.json",
+                    "name": "Services"
+                },
+                {
+                    "source": "templates\/services-details.json",
+                    "name": "Services Details"
+                }
+            ],
+            "filesize": 6340,
+            "dimensions": [
+                319,
+                500
+            ],
+            "image_source": "self_created",
+            "image_urls": "#"
+        },
+        {
+            "filename": "pack-sapphire-1-1.jpg",
+            "thumbnail_url": "https:\/\/unicktheme.com\/kit-seacab\/wp-content\/uploads\/2024\/11\/pack-sapphire-1-1.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/team.json",
+                    "name": "Team"
+                }
+            ],
+            "filesize": 48264,
+            "dimensions": [
+                360,
+                480
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/cheerful-programmer-smiling-at-camera-while-sittin-UP59SAX"
+        },
+        {
+            "filename": "pack-sapphire-1.jpg",
+            "thumbnail_url": "https:\/\/unicktheme.com\/kit-seacab\/wp-content\/uploads\/2024\/11\/pack-sapphire-1.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/team.json",
+                    "name": "Team"
+                }
+            ],
+            "filesize": 44578,
+            "dimensions": [
+                360,
+                480
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/attractive-girl-at-work-PE98VZK"
+        },
+        {
+            "filename": "pack-sapphire-2.jpg",
+            "thumbnail_url": "https:\/\/unicktheme.com\/kit-seacab\/wp-content\/uploads\/2024\/11\/pack-sapphire-2.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/team.json",
+                    "name": "Team"
+                }
+            ],
+            "filesize": 54351,
+            "dimensions": [
+                360,
+                480
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/young-cheerful-programmer-with-headphones-looking--EN2AWVQ"
+        },
+        {
+            "filename": "VPIxy2EUby8QqNubRTAnraJ92lk-1024x683-2-1.jpg",
+            "thumbnail_url": "https:\/\/unicktheme.com\/kit-seacab\/wp-content\/uploads\/2024\/11\/VPIxy2EUby8QqNubRTAnraJ92lk-1024x683-2-1.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/services-details.json",
+                    "name": "Services Details"
+                },
+                {
+                    "source": "templates\/testimonials.json",
+                    "name": "Testimonials"
+                },
+                {
+                    "source": "templates\/blog-details.json",
+                    "name": "Blog Details"
+                }
+            ],
+            "filesize": 132613,
+            "dimensions": [
+                1024,
+                683
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/top-view-of-creative-businessman-working-on-comput-63DUBG2"
+        },
+        {
+            "filename": "pack-sapphire-2-1.jpg",
+            "thumbnail_url": "https:\/\/unicktheme.com\/kit-seacab\/wp-content\/uploads\/2024\/11\/pack-sapphire-2-1.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/testimonials.json",
+                    "name": "Testimonials"
+                }
+            ],
+            "filesize": 21529,
+            "dimensions": [
+                200,
+                267
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/young-cheerful-programmer-with-headphones-looking--EN2AWVQ"
+        },
+        {
+            "filename": "pack-sapphire-2-2.jpg",
+            "thumbnail_url": "https:\/\/unicktheme.com\/kit-seacab\/wp-content\/uploads\/2024\/11\/pack-sapphire-2-2.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/testimonials.json",
+                    "name": "Testimonials"
+                }
+            ],
+            "filesize": 17627,
+            "dimensions": [
+                200,
+                267
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/attractive-girl-at-work-PE98VZK"
+        },
+        {
+            "filename": "pack-sapphire.jpg",
+            "thumbnail_url": "https:\/\/unicktheme.com\/kit-seacab\/wp-content\/uploads\/2024\/11\/pack-sapphire.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/testimonials.json",
+                    "name": "Testimonials"
+                },
+                {
+                    "source": "templates\/team.json",
+                    "name": "Team"
+                }
+            ],
+            "filesize": 27903,
+            "dimensions": [
+                360,
+                480
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/arab-male-tutor-conducting-online-lesson-using-lap-RYRAPLH"
+        },
+        {
+            "filename": "istockphoto-962678392-612x612-1-2.jpg",
+            "thumbnail_url": "https:\/\/unicktheme.com\/kit-seacab\/wp-content\/uploads\/2024\/11\/istockphoto-962678392-612x612-1-2.jpg",
+            "templates": [
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                }
+            ],
+            "filesize": 53201,
+            "dimensions": [
+                612,
+                408
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/group-of-young-businesspeople-looking-at-laptop-sc-KR7WQU3"
+        },
+        {
+            "filename": "logoipsum-325-svg-1-1.png",
+            "thumbnail_url": "https:\/\/unicktheme.com\/kit-seacab\/wp-content\/uploads\/2024\/11\/logoipsum-325-svg-1-1.png",
+            "templates": [
+                {
+                    "source": "templates\/services-details.json",
+                    "name": "Services Details"
+                }
+            ],
+            "filesize": 3146,
+            "dimensions": [
+                220,
+                40
+            ],
+            "image_source": "self_created",
+            "image_urls": "#"
+        },
+        {
+            "filename": "logoipsum-325-svg-1.png",
+            "thumbnail_url": "https:\/\/unicktheme.com\/kit-seacab\/wp-content\/uploads\/2024\/11\/logoipsum-325-svg-1.png",
+            "templates": [
+                {
+                    "source": "templates\/services-details.json",
+                    "name": "Services Details"
+                }
+            ],
+            "filesize": 3146,
+            "dimensions": [
+                220,
+                40
+            ],
+            "image_source": "self_created",
+            "image_urls": "#"
+        },
+        {
+            "filename": "162140823_435928361028866_4741351907575033450_n-5.jpg",
+            "thumbnail_url": "https:\/\/unicktheme.com\/kit-seacab\/wp-content\/uploads\/2024\/11\/162140823_435928361028866_4741351907575033450_n-5.jpg",
+            "templates": [
+                {
+                    "source": "templates\/team.json",
+                    "name": "Team"
+                }
+            ],
+            "filesize": 130727,
+            "dimensions": [
+                1080,
+                1080
+            ],
+            "image_source": "envato_elements",
+            "image_urls": "https:\/\/elements.envato.com\/young-caucasian-female-graphic-designer-working-on-F7SDUEX"
+        }
+    ]
+}

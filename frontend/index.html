@@ -1,0 +1,1225 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TechWon — AI Operating Systems for UK, US & UAE Businesses</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="stylesheet" href="mascots.css" />
+<link rel="stylesheet" href="scenes.css" />
+<link rel="stylesheet" href="problems.css" />
+<link rel="stylesheet" href="hero.css" />
+<link rel="stylesheet" href="verticals.css" />
+<link rel="stylesheet" href="mobile.css" />
+
+<template id="__bundler_thumbnail" data-bg-color="#020616">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="tg" x1="0" x2="0" y1="0" y2="1">
+        <stop offset="0%" stop-color="#9DE5FF"/>
+        <stop offset="100%" stop-color="#2D9CFF"/>
+      </linearGradient>
+    </defs>
+    <circle cx="600" cy="400" r="240" fill="none" stroke="#2D9CFF" stroke-opacity="0.3" stroke-width="2"/>
+    <circle cx="600" cy="400" r="160" fill="none" stroke="#4FD2FF" stroke-opacity="0.5" stroke-width="2"/>
+    <text x="600" y="420" text-anchor="middle" font-family="sans-serif" font-size="96" font-weight="700" fill="url(#tg)">TW</text>
+  </svg>
+</template>
+</head>
+<body>
+
+<!-- ===== Preloader ===== -->
+<div id="tw-preloader" class="tw-preloader">
+  <div class="tw-pre-stage">
+    <div class="tw-pre-ring r1"></div>
+    <div class="tw-pre-ring r2"></div>
+    <div class="tw-pre-ring r3"></div>
+    <div class="tw-pre-logo"><img src="assets/techwon-logo.png" alt="TechWon" /></div>
+    <div class="tw-pre-orb o1"></div>
+    <div class="tw-pre-orb o2"></div>
+    <div class="tw-pre-orb o3"></div>
+  </div>
+  <div class="tw-pre-label">BOOTING AI OPERATING SYSTEM<span class="tw-dots"><span></span><span></span><span></span></span></div>
+  <div class="tw-pre-bar"><div class="tw-pre-fill"></div></div>
+</div>
+<style>
+.tw-preloader {
+  position: fixed; inset: 0; z-index: 9999;
+  background: radial-gradient(circle at 50% 50%, #010411 0%, #000208 70%);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 28px;
+  transition: opacity .6s ease, visibility .6s ease;
+}
+.tw-preloader.done { opacity: 0; visibility: hidden; pointer-events: none; }
+.tw-pre-stage {
+  position: relative;
+  width: 220px; height: 220px;
+  display: grid; place-items: center;
+}
+.tw-pre-ring {
+  position: absolute; inset: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(79,210,255,0.25);
+  animation: twRingSpin 4s linear infinite;
+}
+.tw-pre-ring.r1 { inset: 0; border-top-color: #4FD2FF; }
+.tw-pre-ring.r2 { inset: 20px; border-right-color: #2D9CFF; animation-duration: 3s; animation-direction: reverse; }
+.tw-pre-ring.r3 { inset: 40px; border-bottom-color: #7BB8FF; animation-duration: 2.2s; }
+@keyframes twRingSpin { to { transform: rotate(360deg); } }
+.tw-pre-logo {
+  position: relative; z-index: 3;
+  width: 160px; height: auto;
+  display: grid; place-items: center;
+  background: none;
+  border-radius: 0;
+  padding: 0;
+  animation: twLogoPulse 2.2s ease-in-out infinite;
+}
+.tw-pre-logo img {
+  width: 100%; height: auto;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 0 24px rgba(79,210,255,0.65))
+          drop-shadow(0 0 48px rgba(45,156,255,0.40));
+}
+@keyframes twLogoPulse {
+  0%, 100% { transform: scale(1);    filter: drop-shadow(0 0 24px rgba(79,210,255,0.65)) drop-shadow(0 0 48px rgba(45,156,255,0.40)); }
+  50%       { transform: scale(1.06); filter: drop-shadow(0 0 36px rgba(79,210,255,0.90)) drop-shadow(0 0 72px rgba(45,156,255,0.60)); }
+}
+.tw-pre-orb {
+  position: absolute;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #4FD2FF;
+  box-shadow: 0 0 12px #4FD2FF, 0 0 24px #2D9CFF;
+  top: 50%; left: 50%;
+  transform-origin: center;
+  animation: twOrbit 3s linear infinite;
+}
+.tw-pre-orb.o1 { animation-duration: 3s; --r: 110px; }
+.tw-pre-orb.o2 { animation-duration: 4.5s; animation-direction: reverse; --r: 88px; background: #9DE5FF; }
+.tw-pre-orb.o3 { animation-duration: 2.4s; --r: 70px; background: #7BB8FF; }
+@keyframes twOrbit {
+  from { transform: translate(-50%,-50%) rotate(0deg) translateX(var(--r)) rotate(0deg); }
+  to   { transform: translate(-50%,-50%) rotate(360deg) translateX(var(--r)) rotate(-360deg); }
+}
+.tw-pre-label {
+  font: 500 11px/1 'JetBrains Mono', monospace;
+  letter-spacing: 0.28em;
+  color: #4FD2FF;
+  display: flex; align-items: center; gap: 8px;
+}
+.tw-dots { display: inline-flex; gap: 4px; }
+.tw-dots span {
+  width: 4px; height: 4px; border-radius: 50%;
+  background: #4FD2FF;
+  animation: twDot 1.2s ease-in-out infinite;
+}
+.tw-dots span:nth-child(2) { animation-delay: .2s; }
+.tw-dots span:nth-child(3) { animation-delay: .4s; }
+@keyframes twDot {
+  0%, 60%, 100% { opacity: 0.2; transform: translateY(0); }
+  30% { opacity: 1; transform: translateY(-3px); }
+}
+.tw-pre-bar {
+  width: 240px; height: 2px;
+  background: rgba(79,210,255,0.12);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.tw-pre-fill {
+  height: 100%; width: 0%;
+  background: linear-gradient(90deg, #2D9CFF, #4FD2FF, #9DE5FF);
+  border-radius: 2px;
+  animation: twFill 1.8s ease-out forwards;
+  box-shadow: 0 0 12px rgba(79,210,255,0.6);
+}
+@keyframes twFill { to { width: 100%; } }
+@media (max-width: 540px) {
+  .tw-pre-stage { width: 180px; height: 180px; }
+  .tw-pre-logo { width: 120px; padding: 0; background: none; border-radius: 0; }
+  .tw-pre-orb.o1 { --r: 85px; }
+  .tw-pre-orb.o2 { --r: 68px; }
+  .tw-pre-orb.o3 { --r: 54px; }
+  .tw-pre-label { font-size: 9.5px; letter-spacing: .2em; }
+  .tw-pre-bar { width: 180px; }
+}
+</style>
+<script>
+  window.addEventListener('load', () => {
+    const minShow = 1800;
+    const start = performance.timing && performance.timing.navigationStart
+      ? Date.now() - performance.timing.navigationStart : 0;
+    const wait = Math.max(0, minShow - start);
+    setTimeout(() => {
+      const p = document.getElementById('tw-preloader');
+      if (p) {
+        p.classList.add('done');
+        setTimeout(() => p.remove(), 700);
+      }
+    }, wait);
+  });
+</script>
+
+<!-- ===== Reusable SVG mascots ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="bodyGrad" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#7BB8FF"/>
+      <stop offset="50%" stop-color="#2D9CFF"/>
+      <stop offset="100%" stop-color="#1E5BD6"/>
+    </linearGradient>
+    <linearGradient id="lightGrad" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#9DE5FF"/>
+      <stop offset="100%" stop-color="#4FD2FF"/>
+    </linearGradient>
+    <radialGradient id="eyeGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#9DE5FF" stop-opacity="1"/>
+      <stop offset="60%" stop-color="#4FD2FF" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#2D9CFF" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="mGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <!-- =============== RANKO — SEO bot (radar dish + magnifier) =============== -->
+    <symbol id="mascot-ranko" viewBox="0 0 200 200">
+      <!-- shadow -->
+      <ellipse cx="100" cy="184" rx="50" ry="6" fill="#000" opacity="0.35"/>
+      <g class="float">
+        <!-- body -->
+        <rect x="60" y="92" width="80" height="72" rx="18" fill="url(#bodyGrad)" stroke="#9DE5FF" stroke-opacity="0.5"/>
+        <rect x="60" y="92" width="80" height="22" rx="18" fill="#1E5BD6" opacity="0.5"/>
+        <!-- chest screen -->
+        <rect x="74" y="124" width="52" height="28" rx="6" fill="#020616" stroke="#4FD2FF" stroke-opacity="0.5"/>
+        <!-- chart bars on screen -->
+        <rect x="80" y="142" width="6" height="6" fill="#4FD2FF"/>
+        <rect x="90" y="138" width="6" height="10" fill="#4FD2FF"/>
+        <rect x="100" y="132" width="6" height="16" fill="#4FD2FF"/>
+        <rect x="110" y="128" width="6" height="20" fill="#9DE5FF"/>
+        <path d="M80 142 L90 138 L100 132 L110 128 L116 126" stroke="#9DE5FF" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+        <!-- arrow up -->
+        <path d="M118 126 l4 -4 m-4 4 l-4 -4 m4 4 v-8" stroke="#9DE5FF" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+        <!-- arms -->
+        <rect x="44" y="108" width="16" height="34" rx="8" fill="url(#bodyGrad)"/>
+        <rect x="140" y="108" width="16" height="34" rx="8" fill="url(#bodyGrad)"/>
+        <!-- magnifier in right hand -->
+        <g transform="translate(150 138)">
+          <circle r="11" fill="none" stroke="#9DE5FF" stroke-width="3"/>
+          <circle r="11" fill="#4FD2FF" opacity="0.18"/>
+          <line x1="8" y1="8" x2="15" y2="15" stroke="#9DE5FF" stroke-width="3.5" stroke-linecap="round"/>
+        </g>
+        <!-- head -->
+        <rect x="68" y="48" width="64" height="48" rx="14" fill="url(#bodyGrad)" stroke="#9DE5FF" stroke-opacity="0.5"/>
+        <rect x="68" y="48" width="64" height="14" rx="14" fill="#9DE5FF" opacity="0.18"/>
+        <!-- eyes -->
+        <g class="blink">
+          <rect x="80" y="68" width="14" height="14" rx="3" fill="#020616"/>
+          <rect x="106" y="68" width="14" height="14" rx="3" fill="#020616"/>
+          <circle cx="87" cy="75" r="4" fill="url(#lightGrad)" filter="url(#mGlow)"/>
+          <circle cx="113" cy="75" r="4" fill="url(#lightGrad)" filter="url(#mGlow)"/>
+        </g>
+        <!-- mouth -->
+        <rect x="92" y="88" width="16" height="3" rx="1.5" fill="#4FD2FF" opacity="0.7"/>
+        <!-- radar dish antenna -->
+        <g class="antenna-bob" style="transform-origin: 100px 48px;">
+          <line x1="100" y1="48" x2="100" y2="30" stroke="#9DE5FF" stroke-width="2"/>
+          <path d="M86 30 Q100 18 114 30 Q100 36 86 30 Z" fill="url(#lightGrad)" stroke="#9DE5FF"/>
+          <circle cx="100" cy="26" r="2.5" fill="#9DE5FF"/>
+          <!-- wifi signal arcs -->
+          <path d="M118 22 Q124 26 122 32" stroke="#4FD2FF" stroke-width="1.5" fill="none" opacity="0.7"/>
+          <path d="M122 16 Q130 22 128 32" stroke="#4FD2FF" stroke-width="1.5" fill="none" opacity="0.5"/>
+        </g>
+      </g>
+    </symbol>
+
+    <!-- =============== QUILL — content bot (pen + page) =============== -->
+    <symbol id="mascot-quill" viewBox="0 0 200 200">
+      <ellipse cx="100" cy="184" rx="50" ry="6" fill="#000" opacity="0.35"/>
+      <g class="float">
+        <!-- body -->
+        <rect x="58" y="92" width="84" height="72" rx="20" fill="url(#bodyGrad)" stroke="#9DE5FF" stroke-opacity="0.5"/>
+        <rect x="58" y="92" width="84" height="20" rx="20" fill="#9DE5FF" opacity="0.18"/>
+        <!-- paper on chest -->
+        <rect x="72" y="118" width="44" height="38" rx="3" fill="#EAF2FF"/>
+        <line x1="78" y1="126" x2="110" y2="126" stroke="#2D9CFF" stroke-width="1.5"/>
+        <line x1="78" y1="132" x2="106" y2="132" stroke="#7BB8FF" stroke-width="1"/>
+        <line x1="78" y1="138" x2="110" y2="138" stroke="#7BB8FF" stroke-width="1"/>
+        <line x1="78" y1="144" x2="100" y2="144" stroke="#7BB8FF" stroke-width="1"/>
+        <line x1="78" y1="150" x2="108" y2="150" stroke="#7BB8FF" stroke-width="1"/>
+        <!-- arms -->
+        <rect x="42" y="108" width="16" height="34" rx="8" fill="url(#bodyGrad)"/>
+        <rect x="142" y="100" width="16" height="42" rx="8" fill="url(#bodyGrad)" transform="rotate(-25 150 121)"/>
+        <!-- quill pen in right hand -->
+        <g transform="translate(160 80) rotate(40)">
+          <path d="M0 0 L4 22 L0 28 L-4 22 Z" fill="#9DE5FF" stroke="#4FD2FF"/>
+          <path d="M-2 -2 Q-8 -16 -2 -28 Q4 -16 2 -2 Z" fill="url(#lightGrad)" stroke="#9DE5FF"/>
+          <line x1="0" y1="-4" x2="0" y2="-22" stroke="#2D9CFF" stroke-width="0.8" opacity="0.6"/>
+        </g>
+        <!-- ink drop -->
+        <circle cx="170" cy="125" r="2.5" fill="#4FD2FF" opacity="0.7"/>
+        <!-- head — round friendly -->
+        <circle cx="100" cy="72" r="30" fill="url(#bodyGrad)" stroke="#9DE5FF" stroke-opacity="0.5"/>
+        <path d="M70 70 Q100 50 130 70" stroke="#9DE5FF" stroke-opacity="0.3" stroke-width="2" fill="none"/>
+        <!-- eyes -->
+        <g class="blink">
+          <ellipse cx="89" cy="72" rx="5" ry="6" fill="#020616"/>
+          <ellipse cx="111" cy="72" rx="5" ry="6" fill="#020616"/>
+          <circle cx="90" cy="71" r="2" fill="#9DE5FF"/>
+          <circle cx="112" cy="71" r="2" fill="#9DE5FF"/>
+        </g>
+        <!-- smile -->
+        <path d="M90 85 Q100 92 110 85" stroke="#9DE5FF" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <!-- headphones / hairline antenna -->
+        <circle cx="100" cy="42" r="3" fill="#9DE5FF"/>
+        <line x1="100" y1="45" x2="100" y2="50" stroke="#9DE5FF" stroke-width="2"/>
+      </g>
+    </symbol>
+
+    <!-- =============== VEGA — commerce bot (cart/box) =============== -->
+    <symbol id="mascot-vega" viewBox="0 0 200 200">
+      <ellipse cx="100" cy="184" rx="50" ry="6" fill="#000" opacity="0.35"/>
+      <g class="float">
+        <!-- body shaped like a package box -->
+        <path d="M58 96 L100 86 L142 96 L142 162 L100 174 L58 162 Z" fill="url(#bodyGrad)" stroke="#9DE5FF" stroke-opacity="0.5"/>
+        <!-- tape -->
+        <path d="M58 96 L100 86 L142 96" fill="none" stroke="#9DE5FF" stroke-opacity="0.4" stroke-width="2"/>
+        <line x1="100" y1="86" x2="100" y2="174" stroke="#9DE5FF" stroke-opacity="0.4" stroke-width="2"/>
+        <!-- price tag -->
+        <g transform="translate(108 110) rotate(20)">
+          <path d="M0 0 L24 0 L30 8 L24 16 L0 16 Z" fill="#9DE5FF"/>
+          <circle cx="24" cy="8" r="2" fill="#020616"/>
+          <text x="6" y="11" font-family="monospace" font-size="7" fill="#020616" font-weight="bold">$</text>
+        </g>
+        <!-- arms -->
+        <rect x="42" y="106" width="16" height="34" rx="8" fill="url(#bodyGrad)"/>
+        <rect x="142" y="106" width="16" height="34" rx="8" fill="url(#bodyGrad)"/>
+        <!-- shopping bag in left hand -->
+        <g transform="translate(36 138)">
+          <path d="M-6 0 L12 0 L10 18 L-4 18 Z" fill="#4FD2FF" stroke="#9DE5FF"/>
+          <path d="M-2 0 Q-2 -6 3 -6 Q8 -6 8 0" stroke="#9DE5FF" stroke-width="1.5" fill="none"/>
+        </g>
+        <!-- head -->
+        <rect x="68" y="42" width="64" height="56" rx="16" fill="url(#bodyGrad)" stroke="#9DE5FF" stroke-opacity="0.5"/>
+        <rect x="68" y="42" width="64" height="16" rx="16" fill="#9DE5FF" opacity="0.15"/>
+        <!-- visor screen -->
+        <rect x="74" y="60" width="52" height="22" rx="5" fill="#020616" stroke="#4FD2FF" stroke-opacity="0.5"/>
+        <g class="pulse-eye">
+          <circle cx="90" cy="71" r="4" fill="url(#lightGrad)" filter="url(#mGlow)"/>
+          <circle cx="110" cy="71" r="4" fill="url(#lightGrad)" filter="url(#mGlow)"/>
+        </g>
+        <!-- cart icon on forehead -->
+        <g transform="translate(94 48)" opacity="0.7">
+          <path d="M0 2 L2 2 L4 8 L11 8 L13 4 L4 4" stroke="#9DE5FF" stroke-width="1" fill="none"/>
+          <circle cx="6" cy="11" r="1.2" fill="#9DE5FF"/>
+          <circle cx="10" cy="11" r="1.2" fill="#9DE5FF"/>
+        </g>
+        <!-- antenna -->
+        <g class="antenna-bob" style="transform-origin: 100px 42px;">
+          <line x1="100" y1="42" x2="100" y2="28" stroke="#9DE5FF" stroke-width="2"/>
+          <circle cx="100" cy="26" r="4" fill="url(#lightGrad)"/>
+        </g>
+      </g>
+    </symbol>
+
+    <!-- =============== IRIS — receptionist bot (headset) =============== -->
+    <symbol id="mascot-iris" viewBox="0 0 200 200">
+      <ellipse cx="100" cy="184" rx="50" ry="6" fill="#000" opacity="0.35"/>
+      <g class="float">
+        <!-- body -->
+        <rect x="60" y="100" width="80" height="64" rx="20" fill="url(#bodyGrad)" stroke="#9DE5FF" stroke-opacity="0.5"/>
+        <rect x="60" y="100" width="80" height="18" rx="20" fill="#9DE5FF" opacity="0.18"/>
+        <!-- name badge -->
+        <rect x="78" y="124" width="44" height="22" rx="4" fill="#020616" stroke="#4FD2FF" stroke-opacity="0.5"/>
+        <text x="100" y="138" text-anchor="middle" font-family="monospace" font-size="8" fill="#4FD2FF" letter-spacing="1">IRIS</text>
+        <!-- arms -->
+        <rect x="44" y="116" width="16" height="34" rx="8" fill="url(#bodyGrad)"/>
+        <rect x="140" y="116" width="16" height="34" rx="8" fill="url(#bodyGrad)"/>
+        <!-- head -->
+        <rect x="64" y="44" width="72" height="60" rx="20" fill="url(#bodyGrad)" stroke="#9DE5FF" stroke-opacity="0.5"/>
+        <!-- friendly screen face -->
+        <g class="blink">
+          <path d="M83 70 Q86 64 90 70" stroke="#9DE5FF" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <path d="M110 70 Q113 64 117 70" stroke="#9DE5FF" stroke-width="3" fill="none" stroke-linecap="round"/>
+        </g>
+        <!-- smile -->
+        <path d="M86 86 Q100 96 114 86" stroke="#9DE5FF" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+        <!-- headset band -->
+        <path d="M58 58 Q100 30 142 58" stroke="#9DE5FF" stroke-width="3" fill="none" stroke-linecap="round"/>
+        <!-- earpieces -->
+        <circle cx="58" cy="62" r="8" fill="#020616" stroke="#4FD2FF"/>
+        <circle cx="58" cy="62" r="3" fill="#4FD2FF"/>
+        <circle cx="142" cy="62" r="8" fill="#020616" stroke="#4FD2FF"/>
+        <circle cx="142" cy="62" r="3" fill="#4FD2FF"/>
+        <!-- mic boom -->
+        <path d="M58 70 Q56 86 78 92" stroke="#9DE5FF" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <ellipse cx="80" cy="93" rx="5" ry="3.5" fill="#4FD2FF" filter="url(#mGlow)">
+          <animate attributeName="opacity" values="0.5;1;0.5" dur="1.5s" repeatCount="indefinite"/>
+        </ellipse>
+        <!-- sound waves from mic -->
+        <path d="M88 88 Q94 92 88 96" stroke="#4FD2FF" stroke-width="1.5" fill="none" opacity="0.7"/>
+        <path d="M93 84 Q102 92 93 100" stroke="#4FD2FF" stroke-width="1.5" fill="none" opacity="0.5"/>
+      </g>
+    </symbol>
+
+    <!-- =============== OTTO — auto/dealer bot (steering wheel + key) =============== -->
+    <symbol id="mascot-otto" viewBox="0 0 200 200">
+      <ellipse cx="100" cy="184" rx="50" ry="6" fill="#000" opacity="0.35"/>
+      <g class="float">
+        <!-- body — chunky -->
+        <rect x="54" y="92" width="92" height="74" rx="14" fill="url(#bodyGrad)" stroke="#9DE5FF" stroke-opacity="0.5"/>
+        <rect x="54" y="92" width="92" height="20" rx="14" fill="#1E5BD6" opacity="0.45"/>
+        <!-- grille -->
+        <g opacity="0.7">
+          <line x1="66" y1="124" x2="134" y2="124" stroke="#9DE5FF" stroke-width="1"/>
+          <line x1="66" y1="130" x2="134" y2="130" stroke="#9DE5FF" stroke-width="1"/>
+          <line x1="66" y1="136" x2="134" y2="136" stroke="#9DE5FF" stroke-width="1"/>
+        </g>
+        <!-- license plate -->
+        <rect x="76" y="146" width="48" height="14" rx="2" fill="#EAF2FF"/>
+        <text x="100" y="156" text-anchor="middle" font-family="monospace" font-size="8" fill="#020616" font-weight="bold">OTTO</text>
+        <!-- arms -->
+        <rect x="38" y="106" width="18" height="36" rx="9" fill="url(#bodyGrad)"/>
+        <rect x="144" y="106" width="18" height="36" rx="9" fill="url(#bodyGrad)"/>
+        <!-- steering wheel in left hand -->
+        <g transform="translate(38 142)">
+          <circle r="12" fill="none" stroke="#9DE5FF" stroke-width="2.5"/>
+          <circle r="5" fill="#4FD2FF"/>
+          <line x1="-12" y1="0" x2="12" y2="0" stroke="#9DE5FF" stroke-width="2"/>
+          <line x1="0" y1="-12" x2="0" y2="0" stroke="#9DE5FF" stroke-width="2"/>
+        </g>
+        <!-- key in right hand -->
+        <g transform="translate(160 142)">
+          <circle r="6" fill="none" stroke="#9DE5FF" stroke-width="2.5"/>
+          <line x1="6" y1="0" x2="18" y2="0" stroke="#9DE5FF" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="14" y1="0" x2="14" y2="4" stroke="#9DE5FF" stroke-width="2.5" stroke-linecap="round"/>
+          <line x1="18" y1="0" x2="18" y2="4" stroke="#9DE5FF" stroke-width="2.5" stroke-linecap="round"/>
+        </g>
+        <!-- head — wide rectangle like a car windshield -->
+        <path d="M64 48 L136 48 L142 80 L58 80 Z" fill="url(#bodyGrad)" stroke="#9DE5FF" stroke-opacity="0.5"/>
+        <!-- windshield visor -->
+        <path d="M68 54 L132 54 L138 76 L62 76 Z" fill="#020616" stroke="#4FD2FF" stroke-opacity="0.5"/>
+        <g class="pulse-eye">
+          <ellipse cx="86" cy="65" rx="6" ry="4" fill="url(#lightGrad)" filter="url(#mGlow)"/>
+          <ellipse cx="114" cy="65" rx="6" ry="4" fill="url(#lightGrad)" filter="url(#mGlow)"/>
+        </g>
+        <!-- side mirrors -->
+        <rect x="56" y="60" width="6" height="10" rx="2" fill="url(#bodyGrad)" stroke="#9DE5FF" stroke-opacity="0.4"/>
+        <rect x="138" y="60" width="6" height="10" rx="2" fill="url(#bodyGrad)" stroke="#9DE5FF" stroke-opacity="0.4"/>
+        <!-- roof antenna -->
+        <line x1="100" y1="48" x2="100" y2="36" stroke="#9DE5FF" stroke-width="2"/>
+        <circle cx="100" cy="34" r="3" fill="#9DE5FF">
+          <animate attributeName="opacity" values="1;0.3;1" dur="1.6s" repeatCount="indefinite"/>
+        </circle>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="bg-field"></div>
+<div class="bg-grid"></div>
+<div class="bg-noise"></div>
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<!-- ===== HUD ===== -->
+<div class="hud-top">
+  <div class="lg">
+    <a href="/"><img src="assets/techwon-logo.png" alt="TechWon" /></a>
+  </div>
+  <nav class="hud-nav">
+    <a href="/" class="nav-link active">Home</a>
+    <a href="/services.html" class="nav-link">Services</a>
+    <a href="/about.html" class="nav-link">About</a>
+    <a href="/contact.html" class="nav-link">Contact</a>
+  </nav>
+  <div class="hud-right">
+    <span class="live-dot"></span>
+    <a href="https://wa.me/14027351647" target="_blank" rel="noopener" class="btn-nav">Book a Call →</a>
+  </div>
+  <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</div>
+
+<!-- Mobile nav overlay -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="/" class="m-link active">Home</a>
+  <a href="/services.html" class="m-link">Services</a>
+  <a href="/about.html" class="m-link">About</a>
+  <a href="/contact.html" class="m-link">Contact</a>
+  <a href="https://wa.me/14027351647" target="_blank" rel="noopener" class="m-cta">Book a Call →</a>
+</div>
+
+<div class="scrubber" id="scrubber">
+  <div class="ch" data-i="0"><span class="dot"></span> Intro</div>
+  <div class="ch" data-i="1"><span class="dot"></span> The OS</div>
+  <div class="ch" data-i="2"><span class="dot"></span> Ranko</div>
+  <div class="ch" data-i="3"><span class="dot"></span> Quill</div>
+  <div class="ch" data-i="4"><span class="dot"></span> Vega</div>
+  <div class="ch" data-i="5"><span class="dot"></span> Iris</div>
+  <div class="ch" data-i="6"><span class="dot"></span> Otto</div>
+  <div class="ch" data-i="7"><span class="dot"></span> Hire them</div>
+</div>
+
+<div class="chapter-label">
+  <div class="ix" id="chIx">00 / 08</div>
+  <div class="ttl" id="chTtl">Brand intro</div>
+</div>
+
+<div class="scroll-hint" id="scrollHint">
+  <span>Scroll to play</span>
+  <div class="arrow"></div>
+</div>
+
+<div class="hud-progress"><div class="fill" id="progFill"></div></div>
+
+<!-- ===== Scroll driver + Stage ===== -->
+<div class="driver" id="driver">
+  <!-- Scroll-snap anchors: one per slide so the page snaps cleanly to each frame -->
+  <div class="snap-anchors" aria-hidden="true">
+    <div class="snap"></div><div class="snap"></div><div class="snap"></div><div class="snap"></div>
+    <div class="snap"></div><div class="snap"></div><div class="snap"></div><div class="snap"></div>
+  </div>
+  <div class="stage" id="stage">
+
+    <!-- ===== Frame 1 — Brand intro ===== -->
+    <section class="frame f1" data-i="0">
+      <div class="orbit-scene">
+        <div class="ring r3"></div>
+      </div>
+      <div class="f1-mascots">
+        <div class="m r" title="Strategy"><svg><use href="#mascot-ranko"/></svg><span class="badge-tag">STRATEGY</span></div>
+        <div class="m q" title="Builders"><svg><use href="#mascot-quill"/></svg><span class="badge-tag">BUILD</span></div>
+        <div class="m v" title="Commerce"><svg><use href="#mascot-vega"/></svg><span class="badge-tag">COMMERCE</span></div>
+        <div class="m i" title="Voice"><svg><use href="#mascot-iris"/></svg><span class="badge-tag">VOICE</span></div>
+        <div class="m o" title="Auto"><svg><use href="#mascot-otto"/></svg><span class="badge-tag">AUTO</span></div>
+      </div>
+      <div class="f1-hero">
+        <div class="f1-eye">TechWon · UK · US · UAE</div>
+        <h1 class="f1-h1">
+          <span class="rl"><span class="grad">The agency</span></span>
+          <span class="rl"><span class="stroke">that ships</span></span>
+          <span class="rl"><span class="grad">AI operating systems.</span></span>
+        </h1>
+        <p class="f1-hook">Not chatbots. Not dashboards.<br/>Full <b>AI workforces</b> that run <b>WhatsApp, voice calls, inventory, orders, retention</b> — for the businesses everyone else calls "too small to bother with".</p>
+        <div class="f1-stats">
+          <div><b>5</b><span>specialist agents</span></div>
+          <div><b>20+</b><span>workflows automated</span></div>
+          <div><b>&lt;30s</b><span>response time</span></div>
+          <div><b>15+</b><span>languages</span></div>
+        </div>
+        <div class="f1-scroll">↓  scroll to meet the team that defines us</div>
+      </div>
+    </section>
+
+    <!-- ===== Frame 2 — Five agents headline ===== -->
+    <section class="frame f2" data-i="1">
+      <div class="scene-bg sbg-network">
+        <span class="node" style="top:18%;left:14%"></span>
+        <span class="node" style="top:28%;left:78%;animation-delay:.4s"></span>
+        <span class="node" style="top:62%;left:22%;animation-delay:.8s"></span>
+        <span class="node" style="top:74%;left:66%;animation-delay:1.2s"></span>
+        <span class="node" style="top:44%;left:88%;animation-delay:1.6s"></span>
+        <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:.25"><line x1="14%" y1="18%" x2="78%" y2="28%" stroke="#4FD2FF" stroke-width="1"/><line x1="22%" y1="62%" x2="66%" y2="74%" stroke="#4FD2FF" stroke-width="1"/><line x1="78%" y1="28%" x2="88%" y2="44%" stroke="#4FD2FF" stroke-width="1"/><line x1="14%" y1="18%" x2="22%" y2="62%" stroke="#4FD2FF" stroke-width="1"/></svg>
+      </div>
+      <div class="orbit-scene">
+        <div class="ring r1"><span class="node"></span><span class="node n2"></span></div>
+        <div class="ring r2"><span class="node"></span><span class="node n3"></span></div>
+        <div class="ring r3"><span class="node n2"></span></div>
+      </div>
+      <div>
+        <div class="eyebrow"><span style="width:6px;height:6px;border-radius:50%;background:var(--blue-2);display:inline-block;"></span> The line-up</div>
+        <h1>
+          <span class="grad">Five agents.</span><br/>
+          <span class="stroke">One operating system</span><br/>
+          <span class="grad">for your business.</span>
+        </h1>
+        <p class="lede">From abandoned carts and missed calls to drained ad budgets and unsold cars — Ranko, Quill, Vega, Iris and Otto take the failures keeping SMBs awake at night and quietly close them out by morning.</p>
+        <div class="problems" id="problems">
+          <div class="prow"><span class="x">✗</span><span class="t">Carts abandoned at checkout</span><span class="v">✓</span><span class="tafter">Recovered in 5 min by Vega</span></div>
+          <div class="prow"><span class="x">✗</span><span class="t">Missed after-hours calls</span><span class="v">✓</span><span class="tafter">Iris answers in 4 seconds</span></div>
+          <div class="prow"><span class="x">✗</span><span class="t">Stuck on page 4 of Google</span><span class="v">✓</span><span class="tafter">Ranko climbs to top 3</span></div>
+          <div class="prow"><span class="x">✗</span><span class="t">Empty content calendar</span><span class="v">✓</span><span class="tafter">Quill ships 20 posts / mo</span></div>
+          <div class="prow"><span class="x">✗</span><span class="t">Cars sitting on the lot</span><span class="v">✓</span><span class="tafter">Otto books test drives 24/7</span></div>
+        </div>
+      </div>
+      <!-- Vega + Otto mascots flanking the problems list -->
+      <div class="f2-mascots" aria-hidden="true">
+        <div class="m fv" title="Commerce"><svg><use href="#mascot-vega"/></svg><span class="badge-tag">COMMERCE</span></div>
+        <div class="m fo" title="Auto"><svg><use href="#mascot-otto"/></svg><span class="badge-tag">AUTO</span></div>
+      </div>
+    </section>
+
+    <!-- ===== Frame 3 — Ranko (SEO) ===== -->
+    <section class="frame" data-i="2">
+      <div class="scene-bg sbg-ranko">
+        <span class="chip" style="left:6%;animation-delay:0s">#1 · ai dental nyc</span>
+        <span class="chip" style="left:18%;animation-delay:3s">▲ 8</span>
+        <span class="chip" style="left:78%;animation-delay:1.5s">#2 · roofing texas</span>
+        <span class="chip" style="left:88%;animation-delay:5s">▲ 11</span>
+        <span class="arrow" style="left:30%;animation-delay:2s">▲▲▲</span>
+        <span class="arrow" style="left:68%;animation-delay:6s">▲▲</span>
+      </div>
+      <div class="agent">
+        <div class="agent-left">
+          <div class="agent-id">
+            <div class="agent-mascot-lg"><svg><use href="#mascot-ranko"/></svg></div>
+            <div>
+              <div class="rl">Agent 01 · SEO Intelligence</div>
+              <div class="nm">Ranko</div>
+            </div>
+          </div>
+          <h2>Climbs the SERP <span class="accent">while you sleep.</span></h2>
+          <p class="desc">A self-directed SEO agent that audits your site, writes the briefs, builds the internal links, and pushes the keywords that actually move revenue to the top of Google.</p>
+          <ul>
+            <li>Daily rank tracking + competitor diffs</li>
+            <li>Auto-generated content briefs for Quill</li>
+            <li>Technical audits, schema, internal links</li>
+          </ul>
+        </div>
+        <div class="agent-right">
+          <div class="mock">
+            <div class="mock-bar"><span class="dot live"></span><span class="dot"></span><span class="dot"></span> <span>ranko.techwon.ai/dashboard</span><span class="url">live</span></div>
+            <div class="mock-seo">
+              <div class="seo-graph">
+                <div class="lbl">Organic clicks · 30d</div>
+                <div class="num">24.8K <span class="delta">▲ 312%</span></div>
+                <svg viewBox="0 0 300 100" preserveAspectRatio="none">
+                  <defs>
+                    <linearGradient id="rg" x1="0" x2="0" y1="0" y2="1">
+                      <stop offset="0%" stop-color="#4FD2FF" stop-opacity="0.5"/>
+                      <stop offset="100%" stop-color="#4FD2FF" stop-opacity="0"/>
+                    </linearGradient>
+                  </defs>
+                  <path d="M0,85 C30,80 50,72 80,68 C110,64 130,55 160,42 C190,28 220,22 250,16 C275,12 290,10 300,8 L300,100 L0,100 Z" fill="url(#rg)"/>
+                  <path d="M0,85 C30,80 50,72 80,68 C110,64 130,55 160,42 C190,28 220,22 250,16 C275,12 290,10 300,8" fill="none" stroke="#4FD2FF" stroke-width="2"/>
+                </svg>
+              </div>
+              <div class="seo-keywords">
+                <div class="kw-row"><span>ai dental clinic nyc</span><span class="pos">#1</span><span class="move up">8</span></div>
+                <div class="kw-row"><span>roofing leads texas</span><span class="pos">#2</span><span class="move up">5</span></div>
+                <div class="kw-row"><span>med spa near me</span><span class="pos">#4</span><span class="move up">11</span></div>
+                <div class="kw-row"><span>used trucks dallas</span><span class="pos">#3</span><span class="move up">6</span></div>
+              </div>
+            </div>
+          </div>
+          <!-- Ranko feature strip -->
+          <div class="feat-strip-wrap"><div class="feat-strip">
+            <div class="feat-card">
+              <span class="feat-ico">📈</span>
+              <div class="feat-t">Daily Rank Tracking</div>
+              <div class="feat-s">Monitors 500+ keywords across Google UK, US &amp; UAE — catches drops before traffic does.</div>
+              <span class="feat-tag">Always on</span>
+            </div>
+            <div class="feat-card">
+              <span class="feat-ico">🔗</span>
+              <div class="feat-t">Auto Link-Building</div>
+              <div class="feat-s">Scans your site structure and deploys internal links automatically — zero dev hours required.</div>
+              <span class="feat-tag">No code</span>
+            </div>
+            <div class="feat-card">
+              <span class="feat-ico">📝</span>
+              <div class="feat-t">Brief Generator</div>
+              <div class="feat-s">Writes SEO briefs that Quill picks up and turns into ranked articles — fully autonomous loop.</div>
+              <span class="feat-tag">Ranko → Quill</span>
+            </div>
+            <div class="feat-card">
+              <span class="feat-ico">🕵️</span>
+              <div class="feat-t">Competitor Intel</div>
+              <div class="feat-s">Tracks every keyword rivals gain and closes the gap before you even notice the shift.</div>
+              <span class="feat-tag">Live diff</span>
+            </div>
+            <div class="feat-card">
+              <span class="feat-ico">🛠️</span>
+              <div class="feat-t">Technical Audits</div>
+              <div class="feat-s">Core Web Vitals, schema markup, crawl errors — flagged, prioritised and reported weekly.</div>
+              <span class="feat-tag">Weekly</span>
+            </div>
+          </div></div><!-- /feat-strip-wrap -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Frame 4 — Quill (Content) ===== -->
+    <section class="frame" data-i="3">
+      <div class="scene-bg sbg-quill">
+        <span class="line" style="top:18%;left:6%;animation-delay:0s"></span>
+        <span class="line" style="top:26%;left:6%;animation-delay:1s"></span>
+        <span class="line" style="top:72%;left:74%;animation-delay:.5s"></span>
+        <span class="line" style="top:80%;left:74%;animation-delay:1.5s"></span>
+        <div class="doc" style="animation-delay:0s"></div>
+        <div class="doc" style="animation-delay:6s"></div>
+        <div class="doc" style="animation-delay:12s"></div>
+      </div>
+      <div class="agent">
+        <div class="agent-left">
+          <div class="agent-id">
+            <div class="agent-mascot-lg"><svg><use href="#mascot-quill"/></svg></div>
+            <div>
+              <div class="rl">Agent 02 · Content Studio</div>
+              <div class="nm">Quill</div>
+            </div>
+          </div>
+          <h2>Writes in your <span class="accent">brand voice.</span></h2>
+          <p class="desc">Blogs, social posts, newsletters, ad copy. Quill ingests your past work, locks in tone, and ships drafts to the calendar — already SEO-optimised by Ranko.</p>
+          <ul>
+            <li>Trained on your past 50 best-performing posts</li>
+            <li>Auto-schedules to LinkedIn, IG, X, blog</li>
+            <li>Editor with one-click brand-voice rewrite</li>
+          </ul>
+        </div>
+        <div class="agent-right">
+          <div class="mock">
+            <div class="mock-bar"><span class="dot live"></span><span class="dot"></span><span class="dot"></span> draft #218 · auto-saved</div>
+            <div class="mock-quill">
+              <div class="quill-tabs"><span class="t active">Blog</span><span class="t">Social</span><span class="t">Email</span><span class="t">Ads</span></div>
+              <div class="quill-body">
+                <div class="h">5 signals your CRM is leaking revenue</div>
+                <div class="ln">Most teams blame their pipeline when leads ghost. But the truth is buried in the handoffs—<span class="typing">in the seven seconds it takes to follow up.</span></div>
+              </div>
+              <div class="quill-chips"><span class="chip">SEO ✓</span><span class="chip">Tone: confident</span><span class="chip">920 words</span><span class="chip">3 internal links</span></div>
+            </div>
+          </div>
+          <!-- Quill feature strip -->
+          <div class="feat-strip-wrap"><div class="feat-strip">
+            <div class="feat-card">
+              <span class="feat-ico">🎯</span>
+              <div class="feat-t">Brand Voice Lock</div>
+              <div class="feat-s">Trained on your top 50 best-performing posts — every draft sounds exactly like you wrote it.</div>
+              <span class="feat-tag">Your tone</span>
+            </div>
+            <div class="feat-card">
+              <span class="feat-ico">📅</span>
+              <div class="feat-t">Auto-Scheduler</div>
+              <div class="feat-s">Drops finished posts onto LinkedIn, Instagram, X and your blog at peak engagement windows.</div>
+              <span class="feat-tag">4 channels</span>
+            </div>
+            <div class="feat-card">
+              <span class="feat-ico">✂️</span>
+              <div class="feat-t">Repurpose Engine</div>
+              <div class="feat-s">Turns one long-form blog into a thread, email sequence and short-form video script in seconds.</div>
+              <span class="feat-tag">1 → many</span>
+            </div>
+            <div class="feat-card">
+              <span class="feat-ico">🔍</span>
+              <div class="feat-t">SEO Pre-Check</div>
+              <div class="feat-s">Ranko reviews every draft before it goes live — keyword gaps, headings and meta all tuned.</div>
+              <span class="feat-tag">Ranko sync</span>
+            </div>
+            <div class="feat-card">
+              <span class="feat-ico">⚡</span>
+              <div class="feat-t">20 Posts / Month</div>
+              <div class="feat-s">Full content calendar shipped autonomously — blogs, captions, emails and ad copy included.</div>
+              <span class="feat-tag">Done for you</span>
+            </div>
+          </div></div><!-- /feat-strip-wrap -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Frame 5 — Vega (Commerce) ===== -->
+    <section class="frame" data-i="4">
+      <div class="scene-bg sbg-vega">
+        <div class="vega-track"></div>
+        <div class="vega-prod" style="top:32%;animation-delay:0s">👕</div>
+        <div class="vega-prod" style="top:48%;animation-delay:1.5s">🎧</div>
+        <div class="vega-prod" style="top:64%;animation-delay:3s">👟</div>
+        <div class="vega-prod" style="top:40%;animation-delay:4.5s">📱</div>
+        <div class="vega-prod" style="top:56%;animation-delay:6s">🕶️</div>
+        <div class="vega-cart">🛒</div>
+        <div class="vega-pkg"></div>
+        <div class="vega-pkg" style="animation-delay:4s"></div>
+        <div class="vega-truck">
+          <div class="trailer"></div>
+          <div class="cab"></div>
+          <div class="wheel w1"></div>
+          <div class="wheel w2"></div>
+          <div class="wheel w3"></div>
+        </div>
+      </div>
+      <div class="agent">
+        <div class="agent-left">
+          <div class="agent-id">
+            <div class="agent-mascot-lg"><svg><use href="#mascot-vega"/></svg></div>
+            <div>
+              <div class="rl">Agent 03 · Commerce Ops</div>
+              <div class="nm">Vega</div>
+            </div>
+          </div>
+          <h2>Runs your store <span class="accent">end-to-end.</span></h2>
+          <p class="desc">Inventory, abandoned carts, order routing, returns, customer chat. Vega plugs into Shopify, WooCommerce or your custom stack and orchestrates the whole funnel.</p>
+          <ul>
+            <li>Recovers carts via SMS + email in &lt;5 min</li>
+            <li>Handles returns, refunds, shipping queries</li>
+            <li>Restocks based on velocity, not gut feel</li>
+          </ul>
+        </div>
+        <div class="agent-right">
+          <div class="mock">
+            <div class="mock-bar"><span class="dot live"></span><span class="dot"></span><span class="dot"></span> shopify · woocommerce · stripe</div>
+            <div class="mock-vega">
+              <div class="vega-stats">
+                <div class="vega-stat"><div class="lbl">Revenue / 24h</div><div class="val">$12.4K <span class="d">▲18%</span></div></div>
+                <div class="vega-stat"><div class="lbl">Carts recovered</div><div class="val">38 <span class="d">▲6</span></div></div>
+                <div class="vega-stat"><div class="lbl">Avg reply</div><div class="val">11s</div></div>
+              </div>
+              <div class="vega-flow">
+                <div class="vega-step"><span class="ico">1</span><span class="t">Detect</span><span class="s">abandoned cart</span></div>
+                <div class="vega-step active"><span class="ico">2</span><span class="t">Nudge</span><span class="s">SMS + email</span></div>
+                <div class="vega-step"><span class="ico">3</span><span class="t">Reply</span><span class="s">handle objection</span></div>
+                <div class="vega-step"><span class="ico">4</span><span class="t">Close</span><span class="s">checkout link</span></div>
+              </div>
+            </div>
+          </div>
+          <!-- Vega feature strip -->
+          <div class="feat-strip-wrap"><div class="feat-strip">
+            <div class="feat-card">
+              <span class="feat-ico">🛒</span>
+              <div class="feat-t">Cart Recovery</div>
+              <div class="feat-s">SMS + email fires within 5 minutes of abandonment. Recovers 34% of lost carts on average.</div>
+              <span class="feat-tag">5-min trigger</span>
+            </div>
+            <div class="feat-card">
+              <span class="feat-ico">📦</span>
+              <div class="feat-t">Smart Restock</div>
+              <div class="feat-s">Predicts stockouts 14 days ahead using velocity data — no more emergency POs or lost sales.</div>
+              <span class="feat-tag">14-day lookahead</span>
+            </div>
+            <div class="feat-card">
+              <span class="feat-ico">💬</span>
+              <div class="feat-t">Returns Autopilot</div>
+              <div class="feat-s">Handles refunds, exchanges and shipping queries end-to-end — no human escalation needed.</div>
+              <span class="feat-tag">Zero tickets</span>
+            </div>
+            <div class="feat-card">
+              <span class="feat-ico">🔌</span>
+              <div class="feat-t">One-Day Go-Live</div>
+              <div class="feat-s">Plugs into Shopify, WooCommerce or custom stack in under 24 hours — no API rewrite needed.</div>
+              <span class="feat-tag">Plug &amp; play</span>
+            </div>
+            <div class="feat-card">
+              <span class="feat-ico">💰</span>
+              <div class="feat-t">Dynamic Pricing</div>
+              <div class="feat-s">Adjusts pricing on slow-moving SKUs based on margin rules you set — maximises revenue per unit.</div>
+              <span class="feat-tag">Rules-based</span>
+            </div>
+          </div></div><!-- /feat-strip-wrap -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Frame 6 — Iris (Voice) ===== -->
+    <section class="frame" data-i="5">
+      <div class="scene-bg sbg-iris">
+        <span class="wave" style="top:30%;left:10%"></span>
+        <span class="wave" style="top:30%;left:10%;animation-delay:1.6s"></span>
+        <span class="wave" style="top:65%;right:8%;animation-delay:.8s"></span>
+        <span class="wave" style="top:65%;right:8%;animation-delay:2.4s"></span>
+        <span class="bubble" style="top:22%;left:18%;animation-delay:0s">+1 (415) booked ✓</span>
+        <span class="bubble" style="top:74%;left:62%;animation-delay:2s">Thu 3:30pm ✓</span>
+        <span class="bubble" style="top:48%;left:78%;animation-delay:4s">22 langs live</span>
+        <span class="bubble" style="top:60%;left:8%;animation-delay:6s">Call in 0:04s</span>
+      </div>
+      <div class="agent">
+        <div class="agent-left">
+          <div class="agent-id">
+            <div class="agent-mascot-lg"><svg><use href="#mascot-iris"/></svg></div>
+            <div>
+              <div class="rl">Agent 04 · Voice Receptionist</div>
+              <div class="nm">Iris</div>
+            </div>
+          </div>
+          <h2>Picks up <span class="accent">on the first ring.</span></h2>
+          <p class="desc">A human-sounding voice agent that books, reroutes, qualifies and never sleeps. Every call transcribed, tagged, and dropped into your CRM with the outcome.</p>
+          <ul>
+            <li>Books directly into Google / Outlook calendars</li>
+            <li>Speaks 22 languages, switches on the fly</li>
+            <li>Handoff to a human in under 1 second</li>
+          </ul>
+        </div>
+        <div class="agent-right iris-right">
+          <div class="iris-phone">
+            <div class="iris-time">9:41</div>
+            <div class="iris-pulse-wrap"><div class="iris-pulse"></div></div>
+            <div class="iris-caller">
+              <div class="name">Sarah · New caller</div>
+              <div class="sub">+1 (415) ••• 8821</div>
+            </div>
+            <div class="iris-bars">
+              <span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <div class="iris-transcript">
+              <div class="row"><span class="tag">IRIS</span><span>Hi! This is Iris from BrightSmile — how can I help today?</span></div>
+              <div class="row"><span class="tag">CALL</span><span>I'd like to book a cleaning, ideally Thursday.</span></div>
+              <div class="row"><span class="tag">IRIS</span><span>Thursday 3:30pm with Dr. Park is open. Booked ✓</span></div>
+            </div>
+          </div>
+          <!-- Iris feature strip -->
+          <div class="feat-strip-wrap"><div class="feat-strip">
+            <div class="feat-card">
+              <span class="feat-ico">⚡</span>
+              <div class="feat-t">4-Second Answer</div>
+              <div class="feat-s">Average pickup time across all live deployments. No hold music, no missed calls, no lost revenue.</div>
+              <span class="feat-tag">Always live</span>
+            </div>
+            <div class="feat-card">
+              <span class="feat-ico">🌍</span>
+              <div class="feat-t">22 Languages</div>
+              <div class="feat-s">Detects what the caller speaks and switches instantly — serves UK, US and UAE customers fluently.</div>
+              <span class="feat-tag">Auto-detect</span>
+            </div>
+            <div class="feat-card">
+              <span class="feat-ico">📋</span>
+              <div class="feat-t">CRM Auto-Log</div>
+              <div class="feat-s">Every call is transcribed, tagged by outcome and pushed to your CRM the moment it ends.</div>
+              <span class="feat-tag">Zero data entry</span>
+            </div>
+            <div class="feat-card">
+              <span class="feat-ico">🤝</span>
+              <div class="feat-t">Instant Handoff</div>
+              <div class="feat-s">Routes to your team in under 1 second when a caller needs a human — with full context passed over.</div>
+              <span class="feat-tag">&lt; 1s transfer</span>
+            </div>
+            <div class="feat-card">
+              <span class="feat-ico">📅</span>
+              <div class="feat-t">Calendar Booking</div>
+              <div class="feat-s">Books directly into Google Calendar or Outlook in real time — no back-and-forth, no double-booking.</div>
+              <span class="feat-tag">Live availability</span>
+            </div>
+          </div></div><!-- /feat-strip-wrap -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Frame 7 — Otto (Auto) ===== -->
+    <section class="frame" data-i="6">
+      <div class="scene-bg sbg-otto">
+        <div class="road"></div>
+        <div class="car" style="animation-delay:0s"><div class="body"></div><div class="wheel l"></div><div class="wheel r"></div></div>
+        <div class="car" style="animation-delay:3s;bottom:13%;transform:scale(.7)"><div class="body"></div><div class="wheel l"></div><div class="wheel r"></div></div>
+        <div class="car" style="animation-delay:6s"><div class="body"></div><div class="wheel l"></div><div class="wheel r"></div></div>
+      </div>
+      <div class="agent">
+        <div class="agent-left">
+          <div class="agent-id">
+            <div class="agent-mascot-lg"><svg><use href="#mascot-otto"/></svg></div>
+            <div>
+              <div class="rl">Agent 05 · Dealership Concierge</div>
+              <div class="nm">Otto</div>
+            </div>
+          </div>
+          <h2>Sells cars <span class="accent">at midnight.</span></h2>
+          <p class="desc">Built for dealerships. Otto matches inventory to buyers, books test drives, runs trade-in estimates and hands warm leads to your floor team with full context.</p>
+          <ul>
+            <li>Live inventory match by budget + lifestyle</li>
+            <li>Trade-in estimate from year/make/mileage</li>
+            <li>Test drives auto-booked into DMS calendar</li>
+          </ul>
+        </div>
+        <div class="agent-right">
+          <div class="mock">
+            <div class="mock-bar"><span class="dot live"></span><span class="dot"></span><span class="dot"></span> westside-motors.com · live chat</div>
+            <div class="mock-otto">
+              <div class="otto-car">
+                <div style="display:flex; gap:14px; align-items:center;">
+                  <div class="ph"></div>
+                  <div class="info">
+                    <div class="ttl">2024 Audi Q5 Premium</div>
+                    <div class="sub">Mythos Black · 12,400 mi · Certified</div>
+                    <div class="meta">
+                      <span>⛽ 28 mpg</span>
+                      <span>⚙ Quattro</span>
+                      <span>★ 4.9</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="price">
+                  <div class="p">$41,900</div>
+                  <span class="badge">Match 96%</span>
+                </div>
+              </div>
+              <div class="otto-chat">
+                <div class="otto-msg user">Looking for an AWD SUV under $45k, leather seats.</div>
+                <div class="otto-msg bot"><span class="who">Otto</span>Found 3 strong matches. The Q5 above checks every box and has 0.9% APR through Friday. Want a test drive Saturday 11am?</div>
+                <div class="otto-msg user">Yes — and can you estimate my trade-in? 2019 Civic, 62k mi.</div>
+              </div>
+            </div>
+          </div>
+          <!-- Otto feature strip -->
+          <div class="feat-strip-wrap"><div class="feat-strip">
+            <div class="feat-card">
+              <span class="feat-ico">🎯</span>
+              <div class="feat-t">Inventory Match</div>
+              <div class="feat-s">Matches buyer budget, lifestyle and preferences to your live stock with 96% accuracy — instantly.</div>
+              <span class="feat-tag">96% match rate</span>
+            </div>
+            <div class="feat-card">
+              <span class="feat-ico">💰</span>
+              <div class="feat-t">Trade-In Estimator</div>
+              <div class="feat-s">Real-time valuation from year, make and mileage — delivered in under 30 seconds, any time of day.</div>
+              <span class="feat-tag">30-second val</span>
+            </div>
+            <div class="feat-card">
+              <span class="feat-ico">📅</span>
+              <div class="feat-t">DMS Calendar Sync</div>
+              <div class="feat-s">Test drives booked directly into your Dealer Management System — zero manual data entry for staff.</div>
+              <span class="feat-tag">DMS native</span>
+            </div>
+            <div class="feat-card">
+              <span class="feat-ico">🔥</span>
+              <div class="feat-t">Warm Lead Handoff</div>
+              <div class="feat-s">Floor team gets full buyer context — budget, timeline, trade-in value and model interest — before they say hello.</div>
+              <span class="feat-tag">Full context</span>
+            </div>
+            <div class="feat-card">
+              <span class="feat-ico">🌙</span>
+              <div class="feat-t">After-Hours Sales</div>
+              <div class="feat-s">Otto handles enquiries at 2am on Saturday so your salespeople walk in Monday with booked appointments.</div>
+              <span class="feat-tag">24 / 7 / 365</span>
+            </div>
+          </div></div><!-- /feat-strip-wrap -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Frame 8 — CTA ===== -->
+    <section class="frame f-cta" data-i="7">
+      <div>
+        <h2>Meet the team that <span class="accent">never clocks out.</span></h2>
+        <p class="lede">Tell us what you're trying to grow — we'll bring the right agents to the call.</p>
+        <div class="verticals">
+          <div class="v-eye">Industries we automate · today</div>
+          <div class="v-grid">
+            <div class="v-card"><span class="v-ico">🦷</span><div class="v-t">Dental Clinics</div><div class="v-s">24/7 chatbot receptionist · books cleanings, x-rays, recalls into your PMS</div></div>
+            <div class="v-card"><span class="v-ico">🍽️</span><div class="v-t">Restaurants</div><div class="v-s">WhatsApp order taker + table reservations · multilingual · pushes straight to POS</div></div>
+            <div class="v-card"><span class="v-ico">🛒</span><div class="v-t">E-Commerce</div><div class="v-s">Shopify ↔ warehouse ↔ WhatsApp agent · carts, orders, courier, returns</div></div>
+            <div class="v-card"><span class="v-ico">🚗</span><div class="v-t">Car Showrooms</div><div class="v-s">AutoMind OS · 20 agents across lead capture, qualification, retention</div></div>
+            <div class="v-card"><span class="v-ico">💼</span><div class="v-t">Real Estate</div><div class="v-s">Listing matcher + viewing scheduler · WhatsApp-first, multi-language</div></div>
+            <div class="v-card v-more"><span class="v-ico">＋</span><div class="v-t">Your industry next</div><div class="v-s">We model the workflow, ship in 7 days, no DMS or rebuild required</div></div>
+          </div>
+        </div>
+        <a href="https://wa.me/14027351647" target="_blank" rel="noopener" class="btn-primary" style="display:inline-flex;margin-top:18px">Book your free 20-min walkthrough →</a>
+        <div class="small">© 2026 TechWon · business@techwon.co · <a href="https://wa.me/14027351647" target="_blank" rel="noopener" style="color:inherit">+1 (402) 735-1647</a></div>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<script>
+  /* Prevent browser from restoring scroll — always start at frame 1 */
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  window.scrollTo(0, 0);
+
+  /* ============ Scroll-driven scene system ============ */
+  (function () {
+    const driver = document.getElementById('driver');
+    const frames = Array.from(document.querySelectorAll('.frame'));
+    const scrubItems = Array.from(document.querySelectorAll('.scrubber .ch'));
+    const progFill = document.getElementById('progFill');
+    const chIx = document.getElementById('chIx');
+    const chTtl = document.getElementById('chTtl');
+    const scrollHint = document.getElementById('scrollHint');
+
+    // ── Mobile: disable cinematic engine, show all frames stacked ──
+    if (window.innerWidth <= 860) {
+      frames.forEach(f => {
+        f.style.opacity = '1';
+        f.style.transform = 'none';
+        f.style.pointerEvents = 'auto';
+        f.classList.add('is-active');
+      });
+      return;
+    }
+
+    const titles = ['Brand intro','The line-up','Ranko · SEO','Quill · Content','Vega · Commerce','Iris · Voice','Otto · Auto','Hire the team'];
+    const N = frames.length;
+
+    // each frame owns a slice [start, end] of the total scroll progress
+    const ranges = [];
+    const slice = 1 / N;
+    for (let i = 0; i < N; i++) {
+      ranges.push({ start: i * slice, end: (i + 1) * slice });
+    }
+
+    function smoothstep(t) { return t < 0 ? 0 : t > 1 ? 1 : t * t * (3 - 2 * t); }
+
+    // Smoothed scroll progress — interpolates each frame toward the real scroll position
+    let pTarget = 0;
+    let pSmooth = 0;
+
+    function readScroll() {
+      const rect = driver.getBoundingClientRect();
+      const total = rect.height - window.innerHeight;
+      pTarget = Math.max(0, Math.min(1, -rect.top / total));
+    }
+
+    function update() {
+      // ease toward target — this is what makes the whole sequence buttery
+      pSmooth = pTarget;
+      const p = pSmooth;
+
+      progFill.style.width = (p * 100).toFixed(2) + '%';
+
+      // Hide scroll hint once user has moved a bit
+      if (p > 0.02) scrollHint.style.opacity = '0';
+      else scrollHint.style.opacity = '1';
+
+      // active frame: the one whose range contains the current progress
+      let activeIdx = Math.min(N - 1, Math.floor(p * N));
+
+      frames.forEach((f, i) => {
+        const r = ranges[i];
+        // Wider pad = longer crossfade = no blank gap between frames
+        const pad = slice * 0.28;
+        // First frame should hold opaque at the very start (no entry fade);
+        // last frame should hold opaque at the very end (no exit fade).
+        const isFirst = i === 0;
+        const isLast = i === N - 1;
+        const inStart = isFirst ? -1 : r.start - pad;
+        const inEnd = isFirst ? -1 : r.start + pad;
+        const outStart = isLast ? 2 : r.end - pad;
+        const outEnd = isLast ? 2 : r.end + pad;
+
+        let opacity = 0;
+        let yOffset = 0;
+        let scale = 1;
+
+        if (p < inStart) {
+          // far below — out of view, prepare entry
+          opacity = 0;
+          yOffset = 60;
+          scale = 0.96;
+        } else if (p < inEnd) {
+          // entering
+          const t = smoothstep((p - inStart) / (inEnd - inStart));
+          opacity = t;
+          yOffset = (1 - t) * 60;
+          scale = 0.96 + t * 0.04;
+        } else if (p < outStart) {
+          // hold
+          opacity = 1;
+          yOffset = 0;
+          scale = 1;
+        } else if (p < outEnd) {
+          // exiting
+          const t = smoothstep((p - outStart) / (outEnd - outStart));
+          opacity = 1 - t;
+          yOffset = -t * 60;
+          scale = 1 - t * 0.04;
+        } else {
+          opacity = 0;
+          yOffset = -60;
+          scale = 0.96;
+        }
+
+        f.style.opacity = opacity.toFixed(3);
+        f.style.transform = `translateY(${yOffset.toFixed(1)}px) scale(${scale.toFixed(3)})`;
+        f.classList.toggle('is-active', i === activeIdx);
+      });
+
+      // Frame 1 extra: zoom-in feel on logo as user starts scrolling
+      const f1 = frames[0];
+      const logo = f1.querySelector('.f1-logo-wrap');
+      if (logo) {
+        const t = Math.min(1, p / slice);
+        const s = 1 - t * 0.15;
+        logo.style.transform = `scale(${s})`;
+      }
+
+      // scrubber state
+      scrubItems.forEach((it, i) => {
+        it.classList.toggle('active', i === activeIdx);
+        it.classList.toggle('past', i < activeIdx);
+      });
+
+      chIx.textContent = String(activeIdx + 1).padStart(2, '0') + ' / ' + String(N).padStart(2, '0');
+      chTtl.textContent = titles[activeIdx];
+    }
+
+    // Click scrubber to jump
+    scrubItems.forEach((it, i) => {
+      it.addEventListener('click', () => {
+        const rect = driver.getBoundingClientRect();
+        const total = rect.height - window.innerHeight;
+        const target = window.scrollY + rect.top + (i + 0.5) * slice * total;
+        window.scrollTo({ top: target, behavior: 'smooth' });
+      });
+    });
+
+    function tick() { update(); requestAnimationFrame(tick); }
+    window.addEventListener('scroll', readScroll, { passive: true });
+    window.addEventListener('resize', readScroll);
+    readScroll();
+    pSmooth = pTarget;
+    tick();
+  })();
+
+  /* Cursor glow */
+  (function () {
+    const glow = document.getElementById('cursorGlow');
+    window.addEventListener('mousemove', (e) => {
+      glow.style.left = e.clientX + 'px';
+      glow.style.top = e.clientY + 'px';
+    });
+  })();
+
+  /* Hero scene parallax (frame 1 mascots tilt subtly with mouse) */
+  (function () {
+    const mascots = document.querySelectorAll('.f1-mascots .m');
+    let tx = 0, ty = 0;
+    window.addEventListener('mousemove', (e) => {
+      tx = (e.clientX / window.innerWidth - 0.5);
+      ty = (e.clientY / window.innerHeight - 0.5);
+    });
+    function loop() {
+      mascots.forEach((m, i) => {
+        const d = 12 + (i % 3) * 8;
+        m.style.transform = `translate(${tx * d}px, ${ty * d}px)`;
+      });
+      requestAnimationFrame(loop);
+    }
+    loop();
+  })();
+  /* Contact form */
+  async function submitContact(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button[type=submit]');
+    const msg = document.getElementById('cta-msg');
+    btn.disabled = true; btn.textContent = 'Sending…';
+    const data = Object.fromEntries(new FormData(e.target).entries());
+    try {
+      const res = await fetch('/api/contact', { method:'POST', headers:{'Content-Type':'application/json'}, body:JSON.stringify(data) });
+      const json = await res.json();
+      msg.className = 'form-msg success';
+      msg.textContent = json.message || 'Message sent!';
+      e.target.reset();
+    } catch { msg.className = 'form-msg error'; msg.textContent = 'Something went wrong. Try again.'; }
+    finally { btn.disabled = false; btn.textContent = 'Send →'; }
+  }
+</script>
+<style>
+.cta-contact-form { margin-top:28px; display:flex; flex-direction:column; gap:14px; max-width:560px; }
+.cta-contact-form .form-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.cta-contact-form input, .cta-contact-form textarea { background:rgba(79,210,255,0.05); border:1px solid rgba(79,210,255,0.25); border-radius:10px; padding:14px 16px; color:#EAF2FF; font-family:inherit; font-size:14px; outline:none; transition:border-color .2s; }
+.cta-contact-form input:focus, .cta-contact-form textarea:focus { border-color:rgba(79,210,255,0.6); }
+.cta-contact-form textarea { resize:vertical; }
+.form-msg { font-size:13px; font-family:monospace; }
+.form-msg.success { color:#4FD2FF; }
+.form-msg.error { color:#FF8A95; }
+@media(max-width:600px) { .cta-contact-form .form-row { grid-template-columns:1fr; } }
+</style>
+<script src="js/main.js" defer></script>
+<script src="js/nav.js" defer></script>
+
+<!-- Floating WhatsApp button -->
+<a href="https://wa.me/14027351647" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+</body>
+</html>

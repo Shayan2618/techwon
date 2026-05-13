@@ -1,0 +1,108 @@
+/* ---------- Robot mascots ---------- */
+.mascot {
+  width: 220px; height: 220px;
+  position: relative;
+  filter: drop-shadow(0 30px 50px rgba(45,156,255,0.4));
+}
+.mascot svg { width: 100%; height: 100%; overflow: visible; }
+.mascot .float { animation: mFloat 4.5s ease-in-out infinite; transform-origin: center; }
+.mascot .float-d { animation: mFloat 4.5s ease-in-out infinite 1.2s; transform-origin: center; }
+@keyframes mFloat {
+  0%, 100% { transform: translateY(0) rotate(0); }
+  50% { transform: translateY(-8px) rotate(2deg); }
+}
+.mascot .blink { animation: mBlink 4s infinite; transform-origin: center; }
+@keyframes mBlink {
+  0%, 92%, 100% { transform: scaleY(1); }
+  94%, 98% { transform: scaleY(0.1); }
+}
+.mascot .antenna-bob { animation: mAnt 2.4s ease-in-out infinite; transform-origin: center bottom; }
+@keyframes mAnt {
+  0%, 100% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+}
+.mascot .spin-slow { animation: mSpin 16s linear infinite; transform-origin: center; transform-box: fill-box; }
+@keyframes mSpin { to { transform: rotate(360deg); } }
+.mascot .pulse-eye {
+  animation: mPulseEye 2s ease-in-out infinite;
+}
+@keyframes mPulseEye {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* Hero mascot (logo orb scene) */
+.f1-mascots {
+  position: absolute; inset: 0;
+  pointer-events: none;
+}
+.f1-mascots .m {
+  position: absolute;
+  width: 140px; height: 140px;
+}
+.f1-mascots .m svg { width: 100%; height: 100%; }
+.f1-mascots .m.r { top: 18%; left: 8%; animation: mFloat 5s ease-in-out infinite; }
+.f1-mascots .m.q { top: 70%; left: 12%; animation: mFloat 6s ease-in-out infinite 0.7s; }
+/* Vega + Otto are the star pair — slightly larger + closer to centre */
+.f1-mascots .m.v {
+  top: 16%; right: 8%;
+  width: 165px; height: 165px;
+  animation: mFloat 5.5s ease-in-out infinite 1.2s;
+  filter: drop-shadow(0 0 18px rgba(79,210,255,0.55));
+}
+.f1-mascots .m.i { top: 68%; right: 14%; animation: mFloat 4.8s ease-in-out infinite 0.4s; }
+.f1-mascots .m.o {
+  top: 52%; right: 3%;
+  width: 165px; height: 165px;
+  animation: mFloat 5.2s ease-in-out infinite 1.8s;
+  filter: drop-shadow(0 0 18px rgba(79,210,255,0.55));
+}
+
+/* ── Frame 2 — Vega + Otto flanking the problems list ── */
+.f2-mascots {
+  position: absolute; inset: 0;
+  pointer-events: none;
+  z-index: 3;
+}
+.f2-mascots .m {
+  position: absolute;
+  width: 155px; height: 155px;
+}
+.f2-mascots .m svg { width: 100%; height: 100%; }
+.f2-mascots .m .badge-tag {
+  position: absolute;
+  left: 50%; bottom: -22px;
+  transform: translateX(-50%);
+  font: 500 9px/1 'JetBrains Mono', monospace;
+  letter-spacing: 0.18em;
+  color: var(--blue-2);
+  background: rgba(8,22,64,0.7);
+  border: 1px solid rgba(79,210,255,0.35);
+  border-radius: 999px;
+  padding: 4px 8px;
+  white-space: nowrap;
+  backdrop-filter: blur(6px);
+  opacity: 0.85;
+}
+/* Vega — upper-right, tilt away from the text */
+.f2-mascots .m.fv {
+  top: 14%; right: 6%;
+  animation: mFloat 5.5s ease-in-out infinite 0.9s;
+  filter: drop-shadow(0 0 20px rgba(79,210,255,0.5));
+}
+/* Otto — lower-right, mirroring Vega's energy */
+.f2-mascots .m.fo {
+  top: 56%; right: 4%;
+  animation: mFloat 5.2s ease-in-out infinite 2.1s;
+  filter: drop-shadow(0 0 20px rgba(79,210,255,0.5));
+}
+
+/* Mascot positioning in agent frames */
+.agent-mascot-wrap {
+  position: relative;
+  display: flex; align-items: flex-start; gap: 24px;
+  margin-bottom: 8px;
+}
+
+/* Team mascots in CTA */
+.team-mascot { width: 100px; height: 100px; }

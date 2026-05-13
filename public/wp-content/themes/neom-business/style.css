@@ -1,0 +1,26 @@
+/*
+Theme Name: Neom Business
+Theme URI: https://awplife.com/wordpress-themes/neom-premium/
+Template: neom-blog
+Author: awplife
+Author URI: https://www.awplife.com/
+Description: A powerful next generation theme for upcoming generations and traditional UI that focuses on the color combinations of solid and gradient colors, along with cool animations and attractive features. Lightning Fast Speed &amp; Responsive Theme. Neom is a responsive and fully customizable theme to create any kind of websites. The advanced admin panel will enable you to customize it without any technical knowledge. it will enable you to create almost any type of website such a blog, portfolio, news, newspaper, mega magazine, dark business , architecture, interior design, decoration, furniture, home decor, construction, corporate, agency, business promotion, industries, Beauty &amp; spa salons, photography, gym, fitness, health, medical, startups, business agencies, law firms, travel, education, university portal, restaurant, meta shop, quick magazines, finance, accounting, consulting, travel agency website. Theme is fully compatible with popular WordPress plugins like Elementor Page Builder, Slider, Carousal, Beaver Builder, Brizy, Visual Composer, Divi, SiteOrigin, Gutenberg, Block-Enabled, WooCommerce, WPML, Yoast SEO, Shortcode, Jetpack, Contact Form 7, Mailchimp for WordPress, bbPress, Demo Importer, WPForms and many more. If you are looking for a dark and easy to use theme, don´t go astray. You just found it! View the demo of Neom Premium https://awplife.com/demo/neom-premium/
+Tags: one-column,two-columns,right-sidebar,flexible-header,custom-background,custom-colors,custom-header,custom-menu,custom-logo,featured-image-header,featured-images,footer-widgets,full-width-template,sticky-post,theme-options,threaded-comments,translation-ready,blog,news,education,editor-style,grid-layout
+Version: 0.0.3
+Tested up to: 6.7
+Requires PHP: 5.6
+License: GPLv3 or later
+License URI:  https://www.gnu.org/licenses/gpl-3.0.html
+Text Domain: neom-business
+*/
+
+.post-content span.tag-links {
+    background: var(--sp-gradient2);
+    padding: 0px 0px;
+    color: var(--sp-white);
+    line-height: 2.2;
+}
+
+.post-content span.cat-links {
+    margin-left: 5px;
+}

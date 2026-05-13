@@ -1,0 +1,282 @@
+/* ============================================================
+   MOBILE SLIDE LAYOUT — disable cinematic engine, stack frames
+   ============================================================ */
+@media (max-width: 860px) {
+  /* Kill the scroll-snap cinematic architecture */
+  html { scroll-snap-type: none !important; }
+  body { overscroll-behavior-y: auto; }
+
+  /* Driver: shrink to natural height, no longer a scroll multiplier */
+  .driver { height: auto !important; }
+
+  /* Stage: un-sticky, let content flow normally */
+  .stage {
+    position: relative !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  /* Snap anchors: no longer needed */
+  .snap-anchors { display: none !important; }
+
+  /* Each frame: back to normal document flow, full height, scrollable */
+  .frame {
+    position: relative !important;
+    opacity: 1 !important;
+    transform: none !important;
+    pointer-events: auto !important;
+    min-height: 100svh !important;   /* fills screen but can grow taller */
+    height: auto !important;
+    overflow: hidden !important;     /* contain abs-positioned scene-bg / mascot overlays */
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    padding-top: 72px !important;
+    padding-bottom: 56px !important;
+  }
+
+  /* Subtle divider between frames */
+  .frame + .frame {
+    border-top: 1px solid rgba(79,210,255,0.07);
+  }
+
+  /* f2 override: already uses align-items:start, keep it */
+  .f2 {
+    padding-top: 72px !important;
+    padding-bottom: 56px !important;
+  }
+
+  /* Agent frames: content div should fill width */
+  .frame > .agent { width: 100% !important; }
+}
+
+/* ============ Comprehensive mobile responsiveness ============ */
+@media (max-width: 860px) {
+  /* Header: solid bar, shrink for mobile */
+  .hud-top {
+    height: 54px !important;
+    padding: 0 16px !important;
+  }
+  .hud-top .lg img { height: 32px !important; max-width: 130px !important; }
+  .hud-top .lg { padding: 0 !important; background: none !important; border-radius: 0 !important; box-shadow: none !important; }
+  .hud-top .right { display: none !important; }  /* hide live status on mobile */
+  .hud-nav { gap: 0 !important; }
+  .nav-link { font-size: 12px !important; padding: 6px 10px !important; }
+  .btn-nav { font-size: 11.5px !important; padding: 7px 13px !important; }
+
+  /* Chapter label + scrubber: hide for cleanliness */
+  .scrubber, .chapter-label, .scroll-hint, .hud-progress { display: none !important; }
+
+  /* All section frames: padding + smaller type (desktop override, mobile uses the block above) */
+  .frame {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+  .frame h1, .f1-h1 {
+    font-size: clamp(28px, 8vw, 46px) !important;
+    line-height: 1.02 !important;
+  }
+  .frame h2 {
+    font-size: clamp(26px, 7vw, 38px) !important;
+    line-height: 1.05 !important;
+  }
+  .lede, .desc, .f1-hook {
+    font-size: 14.5px !important;
+    line-height: 1.55 !important;
+  }
+
+  /* Hero stats: 2x2 grid */
+  .f1-stats {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 14px !important;
+    max-width: 320px;
+    margin-left: auto !important; margin-right: auto !important;
+  }
+  .f1-stats b { font-size: 30px !important; }
+  .f1-stats span { font-size: 8.5px !important; }
+  .f1-eye { font-size: 9px !important; padding: 6px 10px !important; margin-bottom: 14px !important; }
+  .f1-scroll { font-size: 9.5px !important; }
+
+  /* Hero floating mascots: hide on mobile — they overlap the hero text */
+  .f1-mascots { display: none !important; }
+  /* Frame 2 mascots: hide on mobile to avoid text overlap */
+  .f2-mascots { display: none !important; }
+  /* Frame 2 inner content: fill full width */
+  .f2 > div:not(.scene-bg):not(.orbit-scene):not(.f2-mascots) {
+    width: 100% !important; max-width: 100% !important;
+  }
+
+  /* Two-column agent layout → stacked */
+  .agent {
+    grid-template-columns: 1fr !important;
+    gap: 26px !important;
+  }
+  .agent-left .mascot { width: 90px !important; height: 90px !important; margin: 0 0 16px !important; }
+  .agent-id { gap: 12px !important; }
+  .agent-mascot-lg { width: 64px !important; height: 64px !important; }
+  .agent-id .nm { font-size: 22px !important; }
+  .agent-id .rl { font-size: 9.5px !important; letter-spacing: .18em !important; }
+  ul li { font-size: 13.5px !important; padding-left: 22px !important; }
+  ul li::before { left: 2px !important; }
+
+  /* Feature strip: tighter cards on mobile */
+  .feat-card { flex: 0 0 160px !important; padding: 11px 12px !important; }
+  .feat-ico { font-size: 18px !important; }
+  .feat-t { font-size: 11.5px !important; }
+  .feat-s { font-size: 10.5px !important; }
+
+  /* Mockups: full width, no fixed max-height on mobile (content scrolls naturally) */
+  .mock {
+    padding: 12px !important;
+    border-radius: 16px !important;
+    max-height: none !important;   /* let it be as tall as it needs */
+    width: 100% !important;
+  }
+  .mock-bar { font-size: 10px !important; padding-bottom: 10px !important; gap: 6px !important; }
+  .mock-bar .url { font-size: 9px !important; }
+
+  /* SEO mock */
+  .seo-graph .num { font-size: 24px !important; }
+  .seo-graph .lbl { font-size: 10px !important; }
+  .seo-keywords .kw-row { font-size: 11.5px !important; gap: 8px !important; padding: 8px 4px !important; }
+  .seo-keywords .pos { font-size: 11px !important; }
+
+  /* Quill mock */
+  .quill-tabs .t { font-size: 10.5px !important; padding: 6px 10px !important; }
+  .quill-body .h { font-size: 17px !important; }
+  .quill-body .ln { font-size: 13px !important; }
+  .quill-chips { gap: 6px !important; }
+  .quill-chips .chip { font-size: 9.5px !important; padding: 3px 7px !important; }
+
+  /* Vega mock */
+  .vega-stats { grid-template-columns: 1fr 1fr !important; gap: 8px !important; }
+  .vega-stat .val { font-size: 16px !important; }
+  .vega-stat .lbl { font-size: 9px !important; }
+  .vega-flow { grid-template-columns: repeat(2, 1fr) !important; gap: 6px !important; }
+  .vega-step .t { font-size: 12px !important; }
+  .vega-step .s { font-size: 9.5px !important; }
+  .vega-step .ico { width: 22px !important; height: 22px !important; font-size: 11px !important; }
+
+  /* Iris phone — center & shrink */
+  .iris-right { justify-content: center !important; }
+  .iris-phone { width: 260px !important; padding: 16px !important; }
+  .iris-phone .iris-caller .name { font-size: 14px !important; }
+  .iris-transcript .row { font-size: 11.5px !important; }
+  .iris-bars { height: 30px !important; }
+
+  /* Otto mock */
+  .otto-car .ph { width: 70px !important; height: 50px !important; }
+  .otto-car .ttl { font-size: 14px !important; }
+  .otto-car .sub { font-size: 11px !important; }
+  .otto-car .meta { font-size: 10px !important; gap: 8px !important; }
+  .otto-car .price .p { font-size: 18px !important; }
+  .otto-car .badge { font-size: 9px !important; }
+  .otto-msg { font-size: 12px !important; padding: 8px 10px !important; }
+
+  /* Problems list: stack rows */
+  .problems { margin-top: 8px !important; gap: 4px !important; }
+  .prow {
+    grid-template-columns: 18px 1fr !important;
+    gap: 5px 8px !important;
+    padding: 7px 10px !important;
+    font-size: 11.5px !important;
+  }
+  .prow .x { width: 18px !important; height: 18px !important; font-size: 10px !important; }
+  .prow .v { width: 18px !important; height: 18px !important; font-size: 10px !important; grid-column: 1 !important; }
+  .prow .tafter { grid-column: 2 !important; font-size: 11.5px !important; }
+
+  /* CTA verticals: single column on small */
+  .v-grid { grid-template-columns: 1fr !important; gap: 10px !important; }
+  .v-card { padding: 14px !important; }
+  .v-t { font-size: 14.5px !important; }
+  .v-s { font-size: 11.5px !important; }
+  .v-eye { font-size: 9.5px !important; }
+
+  /* CTA team mascots row: scroll horizontally */
+  .team {
+    overflow-x: auto !important;
+    grid-template-columns: repeat(5, 100px) !important;
+    gap: 12px !important;
+    padding-bottom: 8px;
+    scrollbar-width: none;
+  }
+  .team::-webkit-scrollbar { display: none; }
+  .team .mem .team-mascot { width: 64px !important; height: 64px !important; }
+  .team .mem .nm { font-size: 13px !important; }
+  .team .mem .rl { font-size: 9px !important; }
+
+  .btn-primary { font-size: 13px !important; padding: 12px 22px !important; }
+  .small { font-size: 10.5px !important; }
+
+  /* Scene backgrounds: dim further for legibility on small screens */
+  .scene-bg { opacity: 0.55 !important; }
+
+  /* Orbit scene: contained */
+  .orbit-scene .ring.r1, .orbit-scene .ring.r2, .orbit-scene .ring.r3 { transform-origin: center; }
+}
+
+/* Even tighter for very small phones */
+@media (max-width: 420px) {
+  .frame { padding: 70px 14px 80px !important; }
+  .frame h1, .f1-h1 { font-size: clamp(24px, 9vw, 34px) !important; }
+  .f1-hook { font-size: 12.5px !important; }
+  .f1-stats { gap: 10px !important; }
+  .f1-stats b { font-size: 26px !important; }
+  .iris-phone { width: 230px !important; }
+  .team { grid-template-columns: repeat(5, 86px) !important; }
+}
+
+/* Disable hover-only effects on touch devices */
+@media (hover: none) {
+  .v-card:hover { transform: none !important; }
+}
+
+/* ============================================================
+   CONTENT PAGES — services / about / contact responsive fixes
+   ============================================================ */
+@media (max-width: 860px) {
+
+  /* Page hero sections */
+  .page-hero { padding: 100px 20px 48px !important; }
+  .page-hero h1 { font-size: clamp(28px, 8vw, 48px) !important; }
+  .page-hero p  { font-size: 15px !important; }
+
+  /* Generic page-wrap padding */
+  .page-wrap { padding: 0 20px !important; }
+
+  /* Service cards: single column */
+  .services-grid,
+  .svc-grid { grid-template-columns: 1fr !important; gap: 16px !important; }
+
+  /* About: stat row, value cards, locations — stack */
+  .about-stats { grid-template-columns: repeat(2,1fr) !important; gap: 12px !important; }
+  .values-grid { grid-template-columns: 1fr !important; gap: 14px !important; }
+  .locations-grid { grid-template-columns: 1fr !important; gap: 14px !important; }
+
+  /* Contact: form + info — stack */
+  .contact-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+  .contact-info  { order: -1; }
+
+  /* Verticals grid used on CTA / contact */
+  .v-grid { grid-template-columns: 1fr 1fr !important; }
+
+  /* Section padding */
+  section { padding-left: 20px !important; padding-right: 20px !important; }
+
+  /* Footer */
+  footer {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 20px !important;
+    padding: 32px 20px 48px !important;
+  }
+  footer .ft-links { flex-wrap: wrap !important; gap: 14px !important; }
+}
+
+@media (max-width: 480px) {
+  .about-stats { grid-template-columns: 1fr 1fr !important; }
+  .v-grid { grid-template-columns: 1fr !important; }
+  .page-hero h1 { font-size: clamp(24px, 9vw, 36px) !important; }
+}

@@ -103,6 +103,8 @@
   .f1-mascots { display: none !important; }
   /* Frame 2 mascots: hide on mobile to avoid text overlap */
   .f2-mascots { display: none !important; }
+  /* Otto featured badge overlaps agent-id on mobile */
+  .sbg-otto::before { display: none !important; }
   /* Frame 2 inner content: fill full width */
   .f2 > div:not(.scene-bg):not(.orbit-scene):not(.f2-mascots) {
     width: 100% !important; max-width: 100% !important;

@@ -114,9 +114,32 @@
     flex-direction: column !important;
     gap: 26px !important;
     width: 100% !important;
+    align-items: stretch !important;
   }
-  .agent-left  { order: 1 !important; width: 100% !important; position: relative !important; z-index: 2 !important; }
-  .agent-right { order: 2 !important; width: 100% !important; position: relative !important; z-index: 1 !important; }
+  .agent-left {
+    order: 1 !important;
+    width: 100% !important;
+    position: relative !important;
+    z-index: 2 !important;
+    transform: none !important;
+    opacity: 1 !important;
+    animation: none !important;
+  }
+  .agent-right {
+    order: 2 !important;
+    width: 100% !important;
+    position: relative !important;
+    z-index: 1 !important;
+    transform: none !important;
+    opacity: 1 !important;
+    animation: none !important;
+  }
+  /* Disable all stagger animations on mobile */
+  .frame.is-active .agent * {
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
   .agent-left .mascot { width: 90px !important; height: 90px !important; margin: 0 0 16px !important; }
   .agent-id { gap: 12px !important; }
   .agent-mascot-lg { width: 64px !important; height: 64px !important; }

@@ -121,11 +121,12 @@
     .rv-section-h2.rv-in .rv-line:nth-child(2) > span { opacity: 1; transform: translateY(0); transition-delay: 0.14s; }
     .rv-section-h2.rv-in .rv-line:nth-child(3) > span { opacity: 1; transform: translateY(0); transition-delay: 0.28s; }
 
-    /* ── Page-in transition ── */
-    body { animation: pageIn 0.55s cubic-bezier(0.16,1,0.3,1) both; }
+    /* ── Page-in transition (opacity only — no transform on body to keep
+          position:fixed nav/menu working correctly) ── */
+    body { animation: pageIn 0.45s ease both; }
     @keyframes pageIn {
-      from { opacity: 0; transform: translateY(18px); }
-      to   { opacity: 1; transform: translateY(0); }
+      from { opacity: 0; }
+      to   { opacity: 1; }
     }
 
     /* ── Page-out transition ── */
@@ -275,6 +276,18 @@
     });
   }
 
+  /* ── Remove pageIn animation after it completes so body has no
+        lingering transform/opacity that could break position:fixed ── */
+  function cleanupPageIn() {
+    function onEnd(e) {
+      if (e.animationName === 'pageIn') {
+        document.body.style.animation = '';
+        document.body.removeEventListener('animationend', onEnd);
+      }
+    }
+    document.body.addEventListener('animationend', onEnd);
+  }
+
   /* ── Init ────────────────────────────────────────────────────── */
   function init() {
     setupHero();
@@ -283,6 +296,7 @@
     setupReveal();
     observe();
     setupPageTransitions();
+    cleanupPageIn();
   }
 
   if (document.readyState === 'loading') {
